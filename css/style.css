@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    background-color: blanchedalmond;
+}
+
+main {
+    background-color: beige;
+    padding: 5%;
+}
+
+footer {
+    display: flex;
+    background-color: blanchedalmond;
+}
