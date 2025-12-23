@@ -1,0 +1,26 @@
+header{
+    background-color: orange;
+}
+#opcionesCuenta { 
+    display: none; 
+}
+
+#opcionesCuenta.mostrar { 
+    display: block; 
+}
+
+nav {
+  display: none;
+}
+
+nav.mostrar {
+  display: block;
+}
+
+body.guest [data-estado="guest"] { 
+    display: block; 
+}
+
+body.user [data-estado="user"] { 
+    display: block; 
+}
