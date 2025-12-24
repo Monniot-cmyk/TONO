@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- TO DO: Cambiar titulo y favicon -->
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header>
+        <!-- Generado por JS -->
+        <script src="scripts/header.js"></script>
+    </header>
+
+    <main>
+        <form action="">
+            <!-- TO DO: validaciones en JS. Validar también en HTML? -->
+            <fieldset>
+                <legend>Datos iniciales</legend>
+                <label for="form-nick">Apodo</label>
+                <input type="text" name="form-nick" id="form-nick" required>
+                <!-- Minimo 3 letras, obligatorio -->
+                <label for="form-email">Email</label>
+                <input type="email" name="form-email" id="form-email" required>
+                <!-- Hacer uso de la expresion regular, obligatorio -->
+
+                 <!-- TO DO: gestionar la imagen del usuario -->
+
+                <label for="form-pass">Introduce tu contraseña</label>
+                <input type="password" name="form-pass" id="form-pass" required>
+                <!-- Longitud mínima y uso de caracteres especiales, obligatorio -->
+                <label for="form-pass2">Repite la contraseña</label>
+                <input type="password" name="form-pass2" id="form-pass2" required>
+                <!-- Solo hace falta validar que sea igual a la primera -->
+            </fieldset>
+            <fieldset>
+                <legend>Datos adicionales</legend>
+                <label for="form-nombre">Nombre</label>
+                <input type="text" name="form-nombre" id="form-nombre">
+                <!-- Mínimo de 3 letras -->
+                <label for="form-fecha">Fecha de nacimiento</label>
+                <input type="date" name="form-fecha" id="form-fecha">
+                <!-- Hace falta una edad mínima o máxima?? -->
+                <label for="form-textarea">Añade una descripción sobre ti</label>
+                <textarea name="form-textarea" id="form-textarea"></textarea>
+
+                <!-- TO DO: más valores opcionales, para que haya paridad entre ambos fieldset -->
+                 <!-- Un radius con pregunta sobre género? -->
+
+            </fieldset>
+            <input type="submit" value="Registrarse" class="form-enviar" id="form-enviar">
+        </form>
+    </main>
+
+    <footer>
+        <!-- Generado por JS -->
+        <script src="scripts/footer.js"></script>
+    </footer>
+</body>
+</html>

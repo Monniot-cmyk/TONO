@@ -2,3 +2,7 @@ footer {
     display: flex;
     background-color: blanchedalmond;
 }
+
+ul {
+    list-style-type: none;
+}
