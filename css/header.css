@@ -86,3 +86,70 @@ El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with
   /* color del ruido y opacidad */
   background-color: #37362e13;
 }
+
+
+
+/* Desplegable de opciones de la cuenta */
+#opcionesCuenta {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 10px;
+}
+
+#opcionesCuenta.mostrar {
+  display: block;
+}
+
+/* Todo lo del modal para el login */
+
+#loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#loginOverlay.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#loginModal {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#loginOverlay.mostrar #loginModal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#loginModal input {
+  width: 94%;
+  padding: 8px 2.75%;
+  margin-bottom: 10px;
+}
+
+#loginModal button {
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
