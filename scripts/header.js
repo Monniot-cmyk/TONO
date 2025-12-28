@@ -29,7 +29,7 @@ sectionLogo.appendChild(linkLogo);
 const sectionTitle = document.createElement("section");
 
 const h1 = document.createElement("h1");
-h1.textContent = "PAGINA CHULA PIRULA   QUE CARGA DESDE JS"; // titulo del sitio
+h1.textContent = "TONO";
 sectionTitle.appendChild(h1);
 
 //  boton para desplegar menu

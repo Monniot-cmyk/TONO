@@ -1,5 +1,17 @@
+:root{
+/* CSS HEX */
+--aths-special: #ede5cc;
+--coral-reef: #c8c0a9;
+--yellow-metal: #74613a;
+--armadillo: #37362e;
+--deco: #dadc89;
+--celery: #bac851;
+--dingley: #657348;
+--ecru-white: #f2f1de;
+--golden-grass: #dc932f;
+}
 header{
-    background-color: orange;
+    background-color: var(--coral-reef);
 }
 #opcionesCuenta { 
     display: none; 
@@ -23,4 +35,54 @@ body.guest [data-estado="guest"] {
 
 body.user [data-estado="user"] { 
     display: block; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+
+
+
+
+
+
+/* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
+main {
+    background:linear-gradient(to bottom , 
+    var(--ecru-white) 0%, 
+    var(--coral-reef)70%,
+    var(--yellow-metal)99%);
+    min-height: 80vw;
+}
+
+/* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
+<div class="noise"></div> en el main del documento.
+
+El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with-repeating-gradients*/
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* para que no moleste al usuario */
+  z-index: 1;
+
+  --lines: 0.0003px;
+
+  mask: repeating-radial-gradient(
+    circle at center,
+    #000,
+    var(--lines),
+    #000,
+    0,
+    #0000,
+    calc(var(--lines) * 2),
+    #0000 0
+  );
+
+  /* color del ruido y opacidad */
+  background-color: #37362e13;
 }

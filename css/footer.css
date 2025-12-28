@@ -1,3 +1,17 @@
+:root{
+/* CSS HEX */
+
+--aths-special: #ede5cc;
+--coral-reef: #c8c0a9;
+--yellow-metal: #74613a;
+--armadillo: #37362e;
+--deco: #dadc89;
+--celery: #bac851;
+--dingley: #657348;
+--ecru-white: #f2f1de;
+--golden-grass: #dc932f;
+}
+
 footer {
     display: flex;
     background-color: blanchedalmond;
