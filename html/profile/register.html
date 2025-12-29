@@ -24,7 +24,7 @@
             <!-- parece mentira que a estas alturas no se a donde tiene que llevar el action de un form -->
             <!-- Also, ojo a la estructura que es un cristo pero no se me ha ocurrido como dejarlo mas claro -->
 
-            <form action="" method="post">
+            <form id="formRegistro" method="post">
                 <fieldset>
                     <legend>Datos personales</legend>
                     <label for="nombre">Nombre: </label>
@@ -91,64 +91,9 @@
                             >
                         </div>
                     </fieldset>
-                <fieldset>
-
-                <fieldset>
-                    <legend>Indique sus generos de videojuegos preferidos: </legend>
-
-                    <fieldset>
-                        <legend>Acción</legend>
-                        <label><input type="checkbox" name="juegos[]" value="shooter"> Shooter (FPS / TPS)</label>
-                        <label><input type="checkbox" name="juegos[]" value="plataformas"> Plataformas</label>
-                        <label><input type="checkbox" name="juegos[]" value="lucha"> Lucha</label>
-                        <label><input type="checkbox" name="juegos[]" value="hack_slash"> Hack & Slash</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Aventura y Rol</legend>
-                        <label><input type="checkbox" name="juegos[]" value="aventura"> Aventura gráfica</label>
-                        <label><input type="checkbox" name="juegos[]" value="rpg"> RPG</label>
-                        <label><input type="checkbox" name="juegos[]" value="accion_rpg"> Acción RPG</label>
-                        <label><input type="checkbox" name="juegos[]" value="survival"> Survival</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Estrategia y Gestión</legend>
-                        <label><input type="checkbox" name="juegos[]" value="estrategia"> Estrategia</label>
-                        <label><input type="checkbox" name="juegos[]" value="gestion"> Gestión / Simulación económica</label>
-                        <label><input type="checkbox" name="juegos[]" value="tower_defense"> Tower Defense</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Simulación</legend>
-                        <label><input type="checkbox" name="juegos[]" value="simulacion"> Simulación</label>
-                        <label><input type="checkbox" name="juegos[]" value="sandbox"> Sandbox</label>
-                        <label><input type="checkbox" name="juegos[]" value="vida"> Simulación de vida</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Deportes y Carreras</legend>
-                        <label><input type="checkbox" name="juegos[]" value="deportes"> Deportes</label>
-                        <label><input type="checkbox" name="juegos[]" value="carreras"> Carreras</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Puzzle y Casual</legend>
-                        <label><input type="checkbox" name="juegos[]" value="puzzle"> Puzzle</label>
-                        <label><input type="checkbox" name="juegos[]" value="casual"> Casual</label>
-                        <label><input type="checkbox" name="juegos[]" value="party"> Party games</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Otros</legend>
-                        <label>
-                            <input type="checkbox" id="otrosJuegosCheckbox">Otros
-                        </label>
-                        <input type="text" id="otrosJuegosTexto" name="juegos_otros" placeholder="Especifica otro tipo de juego" disabled>
-                    </fieldset>
                 </fieldset>
 
-                <button type="submit">Enviar y Registrarse</button>
+                <button type="submit" id="btnRegistro">Enviar y Registrarse</button>
             </form>
         </section>
     </main>
@@ -157,6 +102,7 @@
 
     <script src="../../scripts/header.js"></script>
     <script src="../..//scripts/footer.js"></script>
-    <script src="../../scripts/register.js"></script>
+    <script src="../../scripts/validacion/registerValid.js"></script>
+
 </body>
 </html>
