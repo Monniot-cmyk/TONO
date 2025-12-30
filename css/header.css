@@ -1,24 +1,205 @@
+/* COLORES CSS HEX */
 :root{
-/* CSS HEX */
---aths-special: #ede5cc;
---coral-reef: #c8c0a9;
---yellow-metal: #74613a;
---armadillo: #37362e;
---deco: #dadc89;
---celery: #bac851;
---dingley: #657348;
---ecru-white: #f2f1de;
---golden-grass: #dc932f;
+--pumice: #d2dad5;
+--santas-gray: #a4a3a8;
+--mountain-mist: #97969c;
+--jumbo: #7e7d87;
+--salt-box: #67616d;
+--gravel: #49464d;
+--olive-green: #a6b54f;
+--asparagus: #858e54;
+--finch: #545841;
 }
+
+/* FUENTE PERSONALIZADA */
+@font-face {
+  font-family: 'Moonrising'; 
+  src: url('../fonts/Moonrising.ttf') format('woff2'); /* esto del woff2 es para que el navegador lo interprete con esta extension, que al parecer es mas ligera y rula mejor */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* para que cargue rapido */
+}
+
+                        /* EFECTO DE RUIDO PARA EL FONDO DE TODAS LAS PAGINAS */
+
+/* Esto del esta puesto aqui y no al final para que el z-index no sobreescriba ninguna linea mas tarde */
+main > *:not(.noise) {
+  position: relative;
+  z-index: 0;
+}
+
+
+
+
+
+
+
+/* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
+main {
+    position: relative;
+    background:linear-gradient(to bottom , 
+    var(--pumice) 0%, 
+    var(--santas-gray)70%,
+    var(--mountain-mist)99%);
+    min-height: 40vw;
+    overflow: hidden;
+}
+
+/* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
+<div class="noise"></div> en el main del documento.
+
+El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with-repeating-gradients*/
+.noise {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    --lines: 0.0002px;
+
+    mask: repeating-radial-gradient(
+        circle at center,
+        #000,
+        var(--lines),
+        #000,
+        0,
+        #0000,
+        calc(var(--lines) * 2),
+        #0000 0
+    );
+
+    background-color: #cddbd31f;
+    z-index: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+
+
+
+
+                            /* OPCIONES DEL HEADER COMO TAL */
 header{
-    background-color: var(--coral-reef);
+    background-color: var(--gravel);
+    display: flex;
+    padding: 1em 3em;
+    justify-content: space-between;
 }
+
+/* PRIMERA SECCION */
+/* Es la de la imagen del logo, menudo cristo para aplicarle el glow */
+.logo {
+  width: 70px;
+  height: auto;
+  overflow: visible;
+}
+
+.logo-shape {
+  fill: #f8ffff; 
+  filter:
+    drop-shadow(0 0 12px #eaf0c9)
+    drop-shadow(0 0 18px #a6b54f)
+    drop-shadow(0 0 40px #a6b54f)
+    drop-shadow(0 0 120px #8fa63f);
+}
+
+
+/* SEGUNA SECCION */
+/* Titulo de la pag y boton que despliega el nav */
+header>section:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;    
+}
+
+h1{
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    color: #f8ffff;
+    text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 6px #a6b54f,
+    0 0 12px #a6b54f,
+    0 0 24px #8fa63f;
+    letter-spacing: 0.2em;
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 0.7em;
+    padding: 0;
+}
+
+header>section:nth-of-type(2) button{
+    color: #f8ffff;
+    text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 6px #a6b54f,
+    0 0 12px #a6b54f,
+    0 0 24px #8fa63f;
+    background-color: var(--gravel);
+    border: none;
+}
+
+
+/* TERCERA SECCION */
+/* Boton de login  */
+#btnCuenta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btnCuenta svg {
+    width: 50px;
+    overflow: visible;
+}
+
+.user-shape {
+  fill: #f8ffff; 
+  filter:
+    drop-shadow(0 0 1px #eaf0c9)
+    drop-shadow(0 0 2px #a6b54f)
+    drop-shadow(0 0 6px #8fa63f);
+}
+
+#btnCuenta span{
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    color: #f8ffff;
+    text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 6px #a6b54f,
+    0 0 12px #a6b54f,
+    0 0 24px #8fa63f;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
 #opcionesCuenta { 
     display: none; 
 }
 
 #opcionesCuenta.mostrar { 
     display: block; 
+    z-index: 1000;
 }
 
 nav {
@@ -37,104 +218,58 @@ body.user [data-estado="user"] {
     display: block; 
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-
-
-
-
-
-
-
-/* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
-main {
-    background:linear-gradient(to bottom , 
-    var(--ecru-white) 0%, 
-    var(--coral-reef)70%,
-    var(--yellow-metal)99%);
-    min-height: 80vw;
-}
-
-/* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
-<div class="noise"></div> en el main del documento.
-
-El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with-repeating-gradients*/
-.noise {
-  position: fixed;
-  inset: 0;
-  pointer-events: none; /* para que no moleste al usuario */
-  z-index: 1;
-
-  --lines: 0.0003px;
-
-  mask: repeating-radial-gradient(
-    circle at center,
-    #000,
-    var(--lines),
-    #000,
-    0,
-    #0000,
-    calc(var(--lines) * 2),
-    #0000 0
-  );
-
-  /* color del ruido y opacidad */
-  background-color: #37362e13;
-}
-
-
 
 /* Desplegable de opciones de la cuenta */
 #opcionesCuenta {
-  display: none;
-  position: absolute;
-  background: white;
-  padding: 10px;
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
 }
 
 #opcionesCuenta.mostrar {
-  display: block;
+    display: block;
 }
 
+
+
 /* Todo lo del modal para el login */
-
 #loginOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: fixed; /* ya lo tienes */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 9999; /* subir mucho */
 }
 
 #loginOverlay.mostrar {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #loginModal {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
 
-  transform: scale(0.9);
-  opacity: 0;
-  transition: all 0.3s ease;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    position: relative; /* importante */
+    z-index: 10000; /* siempre encima del overlay */
 }
 
 #loginOverlay.mostrar #loginModal {
@@ -153,3 +288,12 @@ El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with
   padding: 8px;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
