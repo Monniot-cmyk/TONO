@@ -78,12 +78,34 @@ const sectionAccount = document.createElement("section");
 const accountButton = document.createElement("button");
 accountButton.id = "btnCuenta";
 
-const accountImg = document.createElement("img");
-accountImg.src = ""; // icono usuario, QUEDA PONERLO
-accountImg.alt = "Mi cuenta";
+const logoUser = `
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="logo">
+  <g class="user-shape" opacity="0.15">
+    <path 
+      d="M32 28C39.3137 28 45 22.3137 45 16C45 9.68629 39.3137 4 32 4C24.6863 4 19 9.68629 19 16C19 22.3137 24.6863 28 32 28Z"
+      fill="none" stroke="#8fa63f" stroke-width="4"/>
+    <path d="M56 48C56 42.3431 51.6569 38 46 38H18C12.3431 38 8 42.3431 8 48V60H56V48Z"
+      fill="none" stroke="#8fa63f" stroke-width="4"/>
+  </g>
 
-accountButton.appendChild(accountImg);
-accountButton.appendChild(document.createTextNode(" Mi Cuenta"));
+  <g class="user-shape" opacity="0.35">
+    <path d="M32 28C39.3137 28 45 22.3137 45 16C45 9.68629 39.3137 4 32 4C24.6863 4 19 9.68629 19 16C19 22.3137 24.6863 28 32 28Z"
+      fill="none" stroke="#a6b54f" stroke-width="2.5"/>
+    <path d="M56 48C56 42.3431 51.6569 38 46 38H18C12.3431 38 8 42.3431 8 48V60H56V48Z"
+      fill="none" stroke="#a6b54f" stroke-width="2.5"/>
+  </g>
+
+
+  <path class="user-shape" d="M32 28C39.3137 28 45 22.3137 45 16C45 9.68629 39.3137 4 32 4C24.6863 4 19 9.68629 19 16C19 22.3137 24.6863 28 32 28Z"
+    fill="#f8ffff"/>
+  <path class="user-shape" d="M56 48C56 42.3431 51.6569 38 46 38H18C12.3431 38 8 42.3431 8 48V60H56V48Z"
+    fill="#f8ffff"/>
+</svg>
+<span>Mi cuenta</span>
+`;
+
+accountButton.innerHTML = logoUser;
+sectionAccount.appendChild(accountButton);
 
 // Contenedor de opciones de cuenta
 const opcionesCuenta = document.createElement("div");
