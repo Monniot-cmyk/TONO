@@ -113,9 +113,9 @@ opcionesCuenta.id = "opcionesCuenta";
 
 // Opciones según estado (guest = no logueado, user = logueado)
 const linksCuenta = [
-  { texto: "Login", href: "html/profile/login.html", estado: "guest" },
-  { texto: "Registrarse", href: "html/profile/register.html", estado: "guest" },
-  { texto: "Ver perfil", href: "html/profile/profile.html", estado: "user" },
+  { texto: "Login", href: "/html/profile/login.html", estado: "guest" },
+  { texto: "Registrarse", href: "/html/profile/register.html", estado: "guest" },
+  { texto: "Ver perfil", href: "/html/profile/profile.html", estado: "user" },
   { texto: "Cerrar sesión", href: "#", estado: "user", id: "logout" }
 ];
 
@@ -200,66 +200,13 @@ enlaces.forEach(enlace => {
 });
 
 
-// Modal para el login --------------------
-// Overlay para oscurecer el resto de la página
-const overlay = document.createElement("div");
-overlay.id = "loginOverlay";
+//Llamar a la validación del login y register
+const scriptLogin = document.createElement("script");
+scriptLogin.src = "/scripts/validacion/loginValid.js";
+document.body.appendChild(scriptLogin);
 
-// Modal
-const loginModal = document.createElement("div");
-loginModal.id = "loginModal";
+const scriptRegister = document.createElement("script");
+scriptRegister.src = "/scripts/validacion/registerValid.js";
+document.body.appendChild(scriptRegister);
 
-loginModal.innerHTML = `
-  <h2>Iniciar sesión</h2>
-  <form id="loginForm">
-    <input type="text" id="user" placeholder="Usuario" required>
-    <input type="password" id="pass" placeholder="Contraseña" required>
-    <button type="submit">Entrar</button>
-  </form>
-`;
-
-overlay.appendChild(loginModal);
-document.body.appendChild(overlay);
-
-// Abrir modal
-const loginLink = [...enlaces].find(e => e.textContent === "Login");
-
-loginLink.addEventListener("click", e => {
-  e.preventDefault();
-  overlay.classList.add("mostrar");
-});
-
-// Cerrar al hacer click fuera
-overlay.addEventListener("click", e => {
-  if (e.target === overlay) {
-    overlay.classList.remove("mostrar");
-  }
-});
-
-
-// Fingimos el login: cambian los botones
-
-const loginForm = document.getElementById("loginForm");
-
-loginForm.addEventListener("submit", e => {
-  e.preventDefault();
-
-  // Simulación de login correcto
-  localStorage.setItem("userLogged", "true");
-
-  overlay.classList.remove("mostrar");
-
-  // Recargar para actualizar estado
-  location.reload();
-});
-
-// FUNCIONALIDAD DE CERRAR SESIÓN 
-const logout = document.getElementById("logout");
-if (logout) {
-  logout.addEventListener("click", e => {
-    e.preventDefault();
-    localStorage.removeItem("userLogged");
-    location.reload();
-  });
-}
-
+//<script src="scripts/validacion/loginValid.js"></script>
