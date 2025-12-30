@@ -234,9 +234,117 @@ body.user [data-estado="user"] {
 
 
 /* Todo lo del modal para el login */
+
 #loginOverlay {
-    position: fixed; /* ya lo tienes */
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+#loginOverlay.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#loginModal {
+    background-color: var(--ecru-white);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10000;
+}
+
+#loginOverlay.mostrar #loginModal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#loginModal h2 {
+    margin: 0 0 1.5rem 0;
+    color: var(--olive-green);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+#loginModal input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 1.8px solid var(--jumbo);
+    background-color: var(--pumice);
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+#loginModal input:focus {
+    outline: none;
+    border-color: var(--olive-green);
+    box-shadow: 0 0 10px rgba(166,181,79,0.3);
+    background-color: var(--ecru-white);
+}
+
+#loginModal button {
+    width: 100%;
+    padding: 0.95rem;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--olive-green);
+    color: var(--ecru-white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#loginModal button:hover {
+    background-color: var(--asparagus);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+#loginModal button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 480px) {
+    #loginModal {
+        padding: 2rem 1.5rem;
+    }
+
+    #loginModal h2 {
+        font-size: 1.5rem;
+    }
+
+    #loginModal input, #loginModal button {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* #loginOverlay {
+    position: fixed; /* ya lo tienes */
+    /* top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -250,14 +358,14 @@ body.user [data-estado="user"] {
     transition: opacity 0.3s ease;
 
     z-index: 9999; /* subir mucho */
-}
+/* } */
 
-#loginOverlay.mostrar {
+/* #loginOverlay.mostrar {
     opacity: 1;
     pointer-events: auto;
-}
+}  */
 
-#loginModal {
+/* #loginModal {
     background: white;
     padding: 25px;
     border-radius: 10px;
@@ -269,15 +377,15 @@ body.user [data-estado="user"] {
     transition: all 0.3s ease;
 
     position: relative; /* importante */
-    z-index: 10000; /* siempre encima del overlay */
-}
+    /* z-index: 10000; /* siempre encima del overlay */
+/* } */
 
-#loginOverlay.mostrar #loginModal {
+/* #loginOverlay.mostrar #loginModal {
   transform: scale(1);
   opacity: 1;
-}
+} */ 
 
-#loginModal input {
+/* #loginModal input {
   width: 94%;
   padding: 8px 2.75%;
   margin-bottom: 10px;
@@ -287,7 +395,7 @@ body.user [data-estado="user"] {
   width: 100%;
   padding: 8px;
   cursor: pointer;
-}
+} */ */
 
 
 

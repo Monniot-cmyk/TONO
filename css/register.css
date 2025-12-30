@@ -1,0 +1,159 @@
+/* He puesto los colores de la paleta, si creeis que puede estar bonito con otra combinacion ponerla, 
+los colores de ahora son de prueba */
+/* Falta añadir la tipografía, cambiar los colores, poner los apartados kebab del header */
+/* MAIN */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+   /* FIX GLOBAL */
+main *,
+main *::before,
+main *::after {
+    box-sizing: border-box;
+}
+
+/* CONTENEDOR */
+main section {
+    background-color: var(--ecru-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* TÍTULO */
+main h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--yellow-metal);
+    font-size: 2rem;
+}
+
+/* FORM 2 COLUMNAS */
+main form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* FIELDSETS */
+main fieldset {
+    width: 100%;
+    min-width: 0;
+    border: 2px solid var(--coral-reef);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+/* FIELDSETS QUE OCUPAN TODO */
+main fieldset:nth-of-type(3),
+main #btnRegistro {
+    grid-column: 1 / -1;
+}
+
+/*  LEGEND */
+main legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: var(--dingley);
+}
+
+/* LABELS */
+main label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--armadillo);
+}
+
+/*  INPUTS */
+main input[type="text"],
+main input[type="email"],
+main input[type="password"] {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.4rem;
+    border-radius: 8px;
+    border: 2px solid var(--coral-reef);
+    background-color: var(--aths-special);
+}
+
+main input:focus {
+    outline: none;
+    border-color: var(--golden-grass);
+    background-color: var(--ecru-white);
+}
+
+/* INTERESES (GRID INTERNO) */
+main fieldset fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem 1.2rem;
+    margin-top: 1.2rem;
+    background-color: var(--aths-special);
+}
+
+/* CHECKBOXES */
+main fieldset fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* CHECKBOX COLOR */
+main input[type="checkbox"] {
+    accent-color: var(--golden-grass);
+}
+
+/* OTROS INPUT */
+main .otros-input {
+    grid-column: 1 / -1;
+    margin-top: 0.8rem;
+}
+
+main .otros-input input {
+    width: 100%;
+}
+
+/* BOTÓN */
+main #btnRegistro {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--aths-special);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main #btnRegistro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(195, 196, 154, 0.25);
+}
+
+main #btnRegistro:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/*  RESPONSIVE 1 COLUMNA, PARA MOVILES */
+@media (max-width: 768px) {
+    main form {
+        grid-template-columns: 1fr;
+    }
+}
