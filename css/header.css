@@ -43,6 +43,7 @@ main {
     var(--mountain-mist)99%);
     min-height: 40vw;
     overflow: hidden;
+    flex: 1;
 }
 
 /* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
