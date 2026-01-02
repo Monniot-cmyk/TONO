@@ -179,7 +179,7 @@ accountButton.addEventListener("click", () => {
 
 
 //  FUNCIONALIDAD DEL BOTON DE MENU
-btnMenu.addEventListener("click", () => {
+sectionTitle.addEventListener("click", () => {
   nav.classList.toggle("mostrar");
 });
 
