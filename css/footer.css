@@ -17,3 +17,7 @@ footer {
     background-color: blanchedalmond;
     z-index: 10;
 }
+
+ul {
+    list-style-type: none;
+}

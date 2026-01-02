@@ -96,6 +96,7 @@ header{
     display: flex;
     padding: 1em 3em;
     justify-content: space-between;
+    z-index: 10;
 }
 
 /* PRIMERA SECCION */
@@ -121,7 +122,8 @@ header{
 header>section:nth-of-type(2){
     display: flex;
     flex-direction: column;
-    align-content: flex-start;    
+    align-content: flex-start;
+    cursor:pointer;
 }
 
 h1{
@@ -148,6 +150,7 @@ header>section:nth-of-type(2) button{
     0 0 24px #8fa63f;
     background-color: var(--gravel);
     border: none;
+    cursor: inherit;
 }
 
 
@@ -203,11 +206,46 @@ header>section:nth-of-type(2) button{
 }
 
 nav {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  width: 300px;
+  height: 150px;
+  top:0;
+  left: 39%;
+  transform: translateY(0px);
+  opacity: 0;
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
 }
 
 nav.mostrar {
   display: block;
+  position: absolute;
+  background-color:var(--gravel);
+  opacity: 1;
+  z-index: 1;
+  /* No funciona el z-index? El texto debería pasar por debajo del header, que tiene z-index 10 */
+  transform: translateY(75%);
+  visibility: visible;
+  text-align: center;
+    clip-path: polygon(0% 0%, 10% 8%, 20% 16%, 30% 32%, 40% 40%,
+    50% 44%,
+    60% 40%, 70% 32%, 80% 16%, 90% 8%, 100% 0%, 0% 0%);
+}
+
+nav.mostrar ul {
+    margin: 0;
+    padding: 0;
+    background-color: #0000;
+    
+}
+
+nav.mostrar ul li {
+    background-color: #0000;
+}
+
+nav.mostrar ul li a {
+    text-decoration: none;
+    color: #f8ffff;
 }
 
 body.guest [data-estado="guest"] { 

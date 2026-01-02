@@ -8,7 +8,7 @@ contenedorJuego.style.height = document.body.offsetHeight*0.66 +"px";
 let teatroActivo = false;
 
 document.getElementById('modoTeatroBtn').addEventListener('click', function() {
-    let cambiarFooter = document.querySelector("footer");
+    // let cambiarFooter = document.querySelector("footer");
     if(!teatroActivo) {
         teatroActivo = true;
         // cambiarFooter.style.display = "none";
