@@ -1,18 +1,23 @@
-document.getElementById('modoTeatroBtn').addEventListener('click', function() {
-    const contenedor = document.getElementById('juego1');
-    
-    // Guardamos las dimensiones originales
-    const anchoOriginal = contenedor.offsetWidth;
-    const altoOriginal = contenedor.offsetHeight;
-    
-    // Calculamos la proporción original
-    const proporcion = altoOriginal / anchoOriginal;
-    
-    // Establecemos el nuevo tamaño basado en el ancho de la ventana
-    const nuevoAncho = window.innerWidth * 0.8; // Usamos un 80% del ancho de la ventana
-    const nuevoAlto = nuevoAncho * proporcion; // Mantenemos la misma proporción
+const contenedorJuego = document.getElementById("contenedorJuego");
+contenedorJuego.style.width = document.body.offsetWidth*0.66 +"px";
+contenedorJuego.style.height = document.body.offsetHeight*0.66 +"px";
 
-    // Aplicamos los nuevos valores al contenedor
-    contenedor.style.width = `${nuevoAncho}px`;
-    contenedor.style.height = `${nuevoAlto}px`;
+// contenedorJuego.style.width = window.innerWidth*0.66 +"px";
+// contenedorJuego.style.height = window.innerWidth*0.3 +"px";
+
+let teatroActivo = false;
+
+document.getElementById('modoTeatroBtn').addEventListener('click', function() {
+    let cambiarFooter = document.querySelector("footer");
+    if(!teatroActivo) {
+        teatroActivo = true;
+        // cambiarFooter.style.display = "none";
+        contenedorJuego.style.width = document.body.offsetWidth*0.75 +"px";
+        contenedorJuego.style.height = document.body.offsetHeight*0.75 +"px";
+    } else {
+        teatroActivo = false;
+        // cambiarFooter.style.display = "flex";
+        contenedorJuego.style.width = document.body.offsetWidth*0.66 +"px";
+        contenedorJuego.style.height = document.body.offsetHeight*0.66 +"px";
+    }
 });

@@ -15,4 +15,5 @@
 footer {
     display: flex;
     background-color: blanchedalmond;
+    z-index: 10;
 }
