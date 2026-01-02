@@ -14,9 +14,8 @@ todo el rato el codigo hexadecimal */
 }
 
 main {
-
     padding: 5%;
-    position: relative;   /* para el ruido */
+    position: relative;
     overflow: hidden;
 }
 
