@@ -43,6 +43,7 @@ main {
     var(--mountain-mist)99%);
     min-height: 40vw;
     overflow: hidden;
+    flex: 1;
 }
 
 /* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
@@ -78,10 +79,11 @@ html, body {
 
 
 body {
-display: flex;
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    font-family: 'Century Gothic', sans-serif;
 }
 
 
@@ -96,7 +98,12 @@ header{
     display: flex;
     padding: 1em 3em;
     justify-content: space-between;
+    position: relative; 
+    /* Lo del header en relative es para que el nav lo tome como referencia */
 }
+
+
+
 
 /* PRIMERA SECCION */
 /* Es la de la imagen del logo, menudo cristo para aplicarle el glow */
@@ -202,13 +209,61 @@ header>section:nth-of-type(2) button{
     z-index: 1000;
 }
 
+
+
+
+
+
+
+/* NAV */
+/* Oculto por defecto, se muestra como un desplegable al pulsar el boton */
 nav {
-  display: none;
+   position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%); /* centrado real */
+    width: 70%;
+    background-color: var(--gravel);
+    padding: 1em 2em;
+    display: none;
+    z-index: 999;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 nav.mostrar {
-  display: block;
+    display: block;
 }
+
+nav>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul>li>a{
+    text-decoration: none;
+    color: #f8ffff;
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+}
+
+nav>ul>li>a:hover {
+    text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 4px #a6b54f,
+    0 0 8px #a6b54f,
+    0 0 14px #8fa63f;
+}
+
+
+
+
+
+
+
 
 body.guest [data-estado="guest"] { 
     display: block; 
@@ -223,12 +278,22 @@ body.user [data-estado="user"] {
 #opcionesCuenta {
     display: none;
     position: absolute;
-    background: white;
-    padding: 10px;
+    background: var(--gravel);
+    padding: 1em;
+    top: 105%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-radius: 10px;
 }
 
 #opcionesCuenta.mostrar {
     display: block;
+}
+
+#opcionesCuenta a {
+    color: #f8ffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.5em;
 }
 
 
