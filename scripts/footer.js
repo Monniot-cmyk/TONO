@@ -10,7 +10,7 @@ const footer = document.querySelector("footer");
 const sectionLogo = document.createElement("section");
 
 const imgLogo = document.createElement("img");
-imgLogo.src = ""; // cuando este la imagen ponemos el logo bien
+imgLogo.src = "/img/logoVerde.svg";
 imgLogo.alt = "logo de la pagina";
 
 sectionLogo.appendChild(imgLogo);
@@ -24,7 +24,7 @@ sectionLogo.appendChild(imgLogo);
 const sectionAutores = document.createElement("section");
 
 const h4Autores = document.createElement("h4");
-h4Autores.textContent = "Autores:";
+h4Autores.textContent = "Autores";
 
 const ulAutores = document.createElement("ul");
 
