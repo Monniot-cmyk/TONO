@@ -10,7 +10,7 @@ const footer = document.querySelector("footer");
 const sectionLogo = document.createElement("section");
 
 const imgLogo = document.createElement("img");
-imgLogo.src = "img/logoVerde.svg"; // cuando este la imagen ponemos el logo bien
+imgLogo.src = "/img/logoVerde.svg";
 imgLogo.alt = "logo de la pagina";
 
 sectionLogo.appendChild(imgLogo);
