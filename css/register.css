@@ -23,7 +23,6 @@ main {
 }
 
 
-
 /* CONTENEDOR */
 main section {
     background-color: var(--olive-green);
@@ -173,7 +172,6 @@ main #btnRegistro:active {
 
 
 
-
 /* Efecto parallax para el fondo del formulario, el orginnal es de https://codepen.io/vo0vka/pen/zYrWdwb
 lo he adaptado a este contenedor */
 main section {
@@ -246,7 +244,6 @@ main section > *:not(.mountains-bg) {
 
     }
 }
-
 
 
 
