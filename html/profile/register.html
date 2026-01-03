@@ -46,7 +46,6 @@
 
                 <fieldset>
                     <legend>Intereses</legend>
-                    <label for="musica">Indique sus estilos de música preferidos: </label>
 
                     <fieldset>
                         <legend>Rock</legend>
@@ -83,14 +82,15 @@
 
                     <fieldset>
                         <legend>Otros</legend>
-                            <input type="checkbox" id="otrosCheckbox">
-                            Otros (especifica)
-                            <input type="text" id="otrosTexto" name="musica_otros" placeholder="Escribe aquí..." disabled>
+                            <label><input type="checkbox" id="otrosCheckbox">
+                            Otros (especifica)</label>
+                            <input type="text" id="otrosTexto" name="musica_otros" placeholder="Escribe aquí..." hidden>
                     </fieldset>
                 </fieldset>
-
-                <button type="submit" id="btnRegistro">Enviar y Registrarse</button>
             </form>
+
+            <button type="submit" id="btnRegistro">Enviar y Registrarse</button>
+
             <div class="mountains-bg">
                 <div class="mountain mountain--back"></div>
                 <div class="mountain mountain--mid"></div>

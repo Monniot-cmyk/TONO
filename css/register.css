@@ -19,7 +19,7 @@ los colores de ahora son de prueba */
 main {
     display: flex;
     justify-content: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
 }
 
 
@@ -43,26 +43,12 @@ main h2 {
     margin-bottom: 1.5em;
 }
 
-/* FORM 2 COLUMNAS */
-main form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
 /* FIELDSETS */
 main fieldset {
     width: 100%;
     min-width: 0;
     border: 1px solid var(--finch);
     padding: 1.5rem;
-
-}
-
-/* FIELDSETS QUE OCUPAN TODO */
-main fieldset:nth-of-type(3),
-main #btnRegistro {
-    grid-column: 1 / -1;
 }
 
 /*  LEGEND */
@@ -105,15 +91,6 @@ main input:focus {
     color: #f8ffff;
 }
 
-/* INTERESES (GRID INTERNO) */
-main fieldset fieldset {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem 1.2rem;
-    margin-top: 1.2rem;
-
-}
-
 /* CHECKBOXES */
 main fieldset fieldset label {
     display: flex;
@@ -128,7 +105,6 @@ main input[type="checkbox"] {
 
 /* OTROS INPUT */
 main .otros-input {
-    grid-column: 1 / -1;
     margin-top: 0.8rem;
 }
 
@@ -169,7 +145,52 @@ main #btnRegistro:active {
 }
 
 
+/* GRID DEL FORMULARIO. feat Sergio */
+/* Esto ha sido más complicado de lo que debería*/
 
+main form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cada fieldset ocupa una celda completa de la grid */
+main form > fieldset {
+  box-sizing: border-box;
+}
+
+/* El tercer fieldset (Intereses) debe ocupar el ancho completo */
+main form > fieldset:nth-of-type(3) {
+  grid-column: 1 / -1;
+}
+
+/* El fieldset Intereses es trans (se transforma en grid) */
+main form > fieldset:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Dentro de Intereses, cada fieldset hijo es un ítem de la grid */
+main form > fieldset:nth-of-type(3) > fieldset {
+  box-sizing: border-box;
+}
+
+/* El último fieldset (Otros) ocupa todo el ancho debajo */
+main form > fieldset:nth-of-type(3) > fieldset:last-of-type {
+  grid-column: 1 / -1;
+}
+
+/* Pum, responsive */
+@media (max-width: 768px) {
+  main form {
+    grid-template-columns: 1fr;
+  }
+
+  main form > fieldset:nth-of-type(3) {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* Efecto parallax para el fondo del formulario, el orginnal es de https://codepen.io/vo0vka/pen/zYrWdwb
@@ -242,19 +263,5 @@ main section > *:not(.mountains-bg) {
     to {
         background-position-x: -690px;
 
-    }
-}
-
-
-
-
-
-
-
-
-/*  RESPONSIVE 1 COLUMNA, PARA MOVILES */
-@media (max-width: 768px) {
-    main form {
-        grid-template-columns: 1fr;
     }
 }
