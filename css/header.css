@@ -32,7 +32,12 @@ main > *:not(.noise) {
 
 
 
-
+   /* FIX GLOBAL */
+main *,
+main *::before,
+main *::after {
+    box-sizing: border-box;
+}
 
 /* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
 main {
@@ -41,9 +46,9 @@ main {
     var(--pumice) 0%, 
     var(--santas-gray)70%,
     var(--mountain-mist)99%);
-    min-height: 40vw;
+    min-height: 60vw;
     overflow: hidden;
-    flex: 1;
+    flex: 1 0 auto;
 }
 
 /* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
@@ -108,14 +113,14 @@ header{
 /* PRIMERA SECCION */
 /* Es la de la imagen del logo, menudo cristo para aplicarle el glow */
 .logo {
-  width: 70px;
-  height: auto;
-  overflow: visible;
+    width: 70px;
+    height: auto;
+    overflow: visible;
 }
 
 .logo-shape {
-  fill: #f8ffff; 
-  filter:
+    fill: #f8ffff; 
+    filter:
     drop-shadow(0 0 12px #eaf0c9)
     drop-shadow(0 0 18px #a6b54f)
     drop-shadow(0 0 40px #a6b54f)
@@ -352,6 +357,7 @@ body.user [data-estado="user"] {
   width: 100%;
   padding: 8px;
   cursor: pointer;
+<<<<<<< Updated upstream
 }
 
 
@@ -362,3 +368,6 @@ body.user [data-estado="user"] {
 
 
 
+=======
+}
+>>>>>>> Stashed changes
