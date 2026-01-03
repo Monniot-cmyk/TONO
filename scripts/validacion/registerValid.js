@@ -6,7 +6,7 @@ const otrosTexto = document.getElementById("otrosTexto");
 
 // Activar / desactivar campo "otros". Esto es mitad mío y mitad concha así que lo voy a comentar como si no hubiera un mañana
 otrosCheckbox.addEventListener("change", () => { //Cada vez que cambia su valor se ejecuta
-    otrosTexto.disabled = !otrosCheckbox.checked; //Si no está marcado desactiva el texto y (el if de abajo) borra el valor metido
+    otrosTexto.hidden = !otrosCheckbox.checked; //Si no está marcado desactiva el texto y (el if de abajo) borra el valor metido
     if (!otrosCheckbox.checked) {
         otrosTexto.value = "";
     }
