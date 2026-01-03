@@ -1,34 +1,58 @@
 /* COLORES CSS HEX */
 :root{
---pumice: #d2dad5;
---santas-gray: #a4a3a8;
---mountain-mist: #97969c;
---jumbo: #7e7d87;
---salt-box: #67616d;
---gravel: #49464d;
---olive-green: #a6b54f;
---asparagus: #858e54;
---finch: #545841;
+    --pumice: #d2dad5;
+    --santas-gray: #a4a3a8;
+    --mountain-mist: #97969c;
+    --jumbo: #7e7d87;
+    --salt-box: #67616d;
+    --gravel: #49464d;
+    --olive-green: #a6b54f;
+    --asparagus: #858e54;
+    --finch: #545841;
 }
 
 /* FUENTE PERSONALIZADA */
 @font-face {
-  font-family: 'Moonrising'; 
-  src: url('../fonts/Moonrising.ttf') format('woff2'); /* esto del woff2 es para que el navegador lo interprete con esta extension, que al parecer es mas ligera y rula mejor */
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; /* para que cargue rapido */
+    font-family: 'Moonrising'; 
+    src: url('../fonts/Moonrising.ttf') format('woff2'); /* esto del woff2 es para que el navegador lo interprete con esta extension, que al parecer es mas ligera y rula mejor */
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* para que cargue rapido */
 }
 
                         /* EFECTO DE RUIDO PARA EL FONDO DE TODAS LAS PAGINAS */
 
 /* Esto del esta puesto aqui y no al final para que el z-index no sobreescriba ninguna linea mas tarde */
-main > *:not(.noise) {
-  position: relative;
-  z-index: 0;
+/* El ruido se aplica como pseudo-elemento del main para evitar conflictos de z-index */
+main {
+    position: relative;
 }
 
+main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    --lines: 0.0002px;
+    mask: repeating-radial-gradient(
+        circle at center,
+        #000,
+        var(--lines),
+        #000,
+        0,
+        #0000,
+        calc(var(--lines) * 2),
+        #0000 0
+    );
+    background-color: #cddbd31f;
+    z-index: 0;
+}
 
+/* Todos los hijos del main se posicionan por encima del ruido */
+main > * {
+    position: relative;
+    z-index: 1;
+}
 
 
 
@@ -41,7 +65,6 @@ main *::after {
 
 /* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
 main {
-    position: relative;
     background:linear-gradient(to bottom , 
     var(--pumice) 0%, 
     var(--santas-gray)70%,
@@ -51,31 +74,9 @@ main {
     flex: 1 0 auto;
 }
 
-/* Esto de aqui añade ruido/estatica al cuerpo de la pagina, para que rule hay que tener un:
-<div class="noise"></div> en el main del documento.
-
-El efecto chulisimo viene de esta pagina: https://nerdy.dev/hacky-css-noise-with-repeating-gradients*/
+/* El div .noise ya no es necesario en el HTML, se usa el pseudo-elemento ::before */
 .noise {
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-
-    --lines: 0.0002px;
-
-    mask: repeating-radial-gradient(
-        circle at center,
-        #000,
-        var(--lines),
-        #000,
-        0,
-        #0000,
-        calc(var(--lines) * 2),
-        #0000 0
-    );
-
-    background-color: #cddbd31f;
-    z-index: 0;
+    display: none; /* Ocultar por si acaso queda en el HTML */
 }
 
 html, body {
@@ -183,8 +184,8 @@ header>section:nth-of-type(2) button{
 }
 
 .user-shape {
-  fill: #f8ffff; 
-  filter:
+    fill: #f8ffff; 
+    filter:
     drop-shadow(0 0 1px #eaf0c9)
     drop-shadow(0 0 2px #a6b54f)
     drop-shadow(0 0 6px #8fa63f);
@@ -225,7 +226,7 @@ header>section:nth-of-type(2) button{
 /* NAV */
 /* Oculto por defecto, se muestra como un desplegable al pulsar el boton */
 nav {
-   position: absolute;
+    position: absolute;
     top: 105%;
     left: 50%;
     transform: translateX(-50%); /* centrado real */
@@ -411,60 +412,3 @@ body.user [data-estado="user"] {
         font-size: 0.9rem;
     }
 }
-
-
-
-/* #loginOverlay {
-    position: fixed; /* ya lo tienes */
-    /* top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-
-    z-index: 9999; /* subir mucho */
-/* } */
-
-/* #loginOverlay.mostrar {
-    opacity: 1;
-    pointer-events: auto;
-}  */
-
-/* #loginModal {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-
-    transform: scale(0.9);
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    position: relative; /* importante */
-    /* z-index: 10000; /* siempre encima del overlay */
-/* } */
-
-/* #loginOverlay.mostrar #loginModal {
-  transform: scale(1);
-  opacity: 1;
-} */ 
-
-/* #loginModal input {
-  width: 94%;
-  padding: 8px 2.75%;
-  margin-bottom: 10px;
-}
-
-#loginModal button {
-  width: 100%;
-  padding: 8px;
-  cursor: pointer;
-
