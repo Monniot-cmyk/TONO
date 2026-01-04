@@ -2,31 +2,30 @@
 los colores de ahora son de prueba */
 /* Falta añadir la tipografía, cambiar los colores, poner los apartados kebab del header */
 /* MAIN */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+
+/* COLORES CSS HEX */
+:root{
+--pumice: #d2dad5;
+--santas-gray: #a4a3a8;
+--mountain-mist: #97969c;
+--jumbo: #7e7d87;
+--salt-box: #67616d;
+--gravel: #49464d;
+--olive-green: #9fa76b;
+--asparagus: #a7ad7e;
+--finch: #545841;
 }
 
 main {
-    flex: 1 0 auto;
     display: flex;
     justify-content: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
 }
 
-   /* FIX GLOBAL */
-main *,
-main *::before,
-main *::after {
-    box-sizing: border-box;
-}
 
 /* CONTENEDOR */
 main section {
-    background-color: var(--ecru-white);
+    background-color: var(--olive-green);
     padding: 2.5rem;
     border-radius: 16px;
     max-width: 1000px;
@@ -37,46 +36,38 @@ main section {
 /* TÍTULO */
 main h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    color: var(--yellow-metal);
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    color: #f8ffff;
+    letter-spacing: 0.1em;
     font-size: 2rem;
-}
-
-/* FORM 2 COLUMNAS */
-main form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    margin-bottom: 1.5em;
 }
 
 /* FIELDSETS */
 main fieldset {
     width: 100%;
     min-width: 0;
-    border: 2px solid var(--coral-reef);
+    border: 1px solid var(--finch);
     padding: 1.5rem;
-    border-radius: 12px;
-}
-
-/* FIELDSETS QUE OCUPAN TODO */
-main fieldset:nth-of-type(3),
-main #btnRegistro {
-    grid-column: 1 / -1;
 }
 
 /*  LEGEND */
 main legend {
     padding: 0 0.5rem;
     font-weight: 600;
-    color: var(--dingley);
+    color: var(--gravel);
+    text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 12px #a6b54f;
 }
 
 /* LABELS */
 main label {
     display: block;
     margin-top: 1rem;
-    font-weight: 500;
-    color: var(--armadillo);
+    font-weight: 600;
+    color: #f8ffff;
+    letter-spacing: 0.05em;
 }
 
 /*  INPUTS */
@@ -86,24 +77,18 @@ main input[type="password"] {
     width: 100%;
     padding: 0.7rem;
     margin-top: 0.4rem;
-    border-radius: 8px;
-    border: 2px solid var(--coral-reef);
-    background-color: var(--aths-special);
+    border-radius: 10px;
+    border: 2px solid #adb47e;
+    background-color: #adb47e;
+    color: #f8ffff;
+    
 }
 
 main input:focus {
     outline: none;
-    border-color: var(--golden-grass);
-    background-color: var(--ecru-white);
-}
-
-/* INTERESES (GRID INTERNO) */
-main fieldset fieldset {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem 1.2rem;
-    margin-top: 1.2rem;
-    background-color: var(--aths-special);
+    border: 2px solid var(--gravel);
+    background-color: #adb47e;
+    color: #f8ffff;
 }
 
 /* CHECKBOXES */
@@ -115,12 +100,11 @@ main fieldset fieldset label {
 
 /* CHECKBOX COLOR */
 main input[type="checkbox"] {
-    accent-color: var(--golden-grass);
+    accent-color: var(--finch);
 }
 
 /* OTROS INPUT */
 main .otros-input {
-    grid-column: 1 / -1;
     margin-top: 0.8rem;
 }
 
@@ -136,14 +120,23 @@ main #btnRegistro {
     font-weight: bold;
     border: none;
     border-radius: 12px;
-    background-color: var(--aths-special);
+    background-color: var(--olive-green);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 15em;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    color: var(--gravel);
+    text-shadow:
+        0 0 2px #eaf0c9,
+        0 0 12px #a6b54f;
+    font-family: 'Century Gothic', sans-serif;
 }
 
 main #btnRegistro:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(195, 196, 154, 0.25);
+    box-shadow: 0 10px 20px rgba(223, 224, 170, 0.25);
 }
 
 main #btnRegistro:active {
@@ -151,9 +144,124 @@ main #btnRegistro:active {
     box-shadow: none;
 }
 
-/*  RESPONSIVE 1 COLUMNA, PARA MOVILES */
+
+/* GRID DEL FORMULARIO. feat Sergio */
+/* Esto ha sido más complicado de lo que debería*/
+
+main form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cada fieldset ocupa una celda completa de la grid */
+main form > fieldset {
+  box-sizing: border-box;
+}
+
+/* El tercer fieldset (Intereses) debe ocupar el ancho completo */
+main form > fieldset:nth-of-type(3) {
+  grid-column: 1 / -1;
+}
+
+/* El fieldset Intereses es trans (se transforma en grid) */
+main form > fieldset:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Dentro de Intereses, cada fieldset hijo es un ítem de la grid */
+main form > fieldset:nth-of-type(3) > fieldset {
+  box-sizing: border-box;
+}
+
+/* El último fieldset (Otros) ocupa todo el ancho debajo */
+main form > fieldset:nth-of-type(3) > fieldset:last-of-type {
+  grid-column: 1 / -1;
+}
+
+/* Pum, responsive */
 @media (max-width: 768px) {
-    main form {
-        grid-template-columns: 1fr;
+  main form {
+    grid-template-columns: 1fr;
+  }
+
+  main form > fieldset:nth-of-type(3) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Efecto parallax para el fondo del formulario, el orginnal es de https://codepen.io/vo0vka/pen/zYrWdwb
+lo he adaptado a este contenedor */
+main section {
+    position: relative;
+    overflow: hidden;
+}
+
+main section > *:not(.mountains-bg) {
+    position: relative;
+    z-index: 2;
+}
+
+/* CONTENEDOR DEL FONDO */
+.mountains-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    pointer-events: none;
+    opacity: 0.45;
+}
+
+/* MONTAÑAS */
+.mountain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation: mountain-move linear infinite;
+}
+
+/* CAPA LEJANA */
+.mountain--back {
+    height: 456px;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='356' viewBox='0 0 690 356' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M690 69C678.369 72.673 667.732 78.672 656.946 81C638.484 84.984 626.335 70.478 610.946 71C591.762 71.651 600.724 93.142 563.946 84C556.497 82.148 541.629 67.277 530.946 65C524.55 63.637 523.077 70.842 516.946 70C508.693 68.867 500.983 71.197 495.628 71.614C477.544 73.02 484.605 83.397 464.765 84.93C452.69 85.863 454.961 85.562 447.947 79C425.784 58.268 423.729 61.166 392.946 77C389.555 78.745 383.322 61.821 365.946 54C350.011 46.827 322.208 61.438 309.946 55C305.696 52.768 296.225 40.001 290.946 37C286.235 34.321 285.771 41.428 280.946 39C264.813 30.881 250.878 3.596 238.946 0.999996C228.874 -1.192 220.345 20.544 211.946 22C205.435 23.129 200.403 16.268 184.947 23C175.69 27.032 181.476 39.556 174.947 39C152.72 37.107 153.341 41.475 150.946 48C146.858 59.139 132.744 59.927 122.947 61C115.367 61.83 114.885 35.59 102.947 36C87.063 36.545 85.414 60.597 76.946 59C33.409 50.787 61.893 77.944 31.946 75C15.604 73.393 21.328 63.645 14.946 65C3.03801 67.529 1.59301 69.028 0 69V349L690 356L690 69Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='356' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%232C336A'/%3e%3cstop offset='1' stop-color='%232D346C'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e ");
+    background-position-y: 40px;
+    animation-duration: 10s;
+    animation-duration: 35s;
+    opacity: 0.3;
+}
+
+/* CAPA MEDIA */
+.mountain--mid {
+    height: 560px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='245' viewBox='0 0 690 245' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 130C24.589 114.234 49.303 80.075 64.946 69C73.557 62.904 102.228 68.806 119.946 63C147.857 53.854 162.909 12.118 220.396 8.88901C244.454 7.53701 237.97 44.826 291.946 46C318.118 46.569 352.714 0.0900071 370.946 1.00001C382.814 1.59301 399.732 13.754 418.184 27.618C429.957 36.464 449.838 38.331 461.946 46C472.903 52.94 479.14 64.021 488.946 66C508.192 69.885 513.886 60.213 532.946 65C582.129 77.351 591.441 128.243 690 127V245H0V130Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='245' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23323B79'/%3e%3cstop offset='1' stop-color='%234652AA'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e ");
+    background-position-y: 70px;
+    animation-duration: 14s;
+    opacity: 0.5;
+}
+
+/* CAPA FRONTAL */
+.mountain--front {
+    height: 420px;
+    background-image:  url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='245' viewBox='0 0 690 245' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 130C24.589 114.234 49.303 80.075 64.946 69C73.557 62.904 102.228 68.806 119.946 63C147.857 53.854 162.909 12.118 220.396 8.88901C244.454 7.53701 237.97 44.826 291.946 46C318.118 46.569 352.714 0.0900071 370.946 1.00001C382.814 1.59301 399.732 13.754 418.184 27.618C429.957 36.464 449.838 38.331 461.946 46C472.903 52.94 479.14 64.021 488.946 66C508.192 69.885 513.886 60.213 532.946 65C582.129 77.351 591.441 128.243 690 127V245H0V130Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='245' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23323B79'/%3e%3cstop offset='1' stop-color='%234652AA'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e ");
+      background-position-y: 130px;
+      animation-duration: 25s;
+    opacity: 0.7;
+}
+
+/* ANIMACIÓN */
+@keyframes mountain-move {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -690px;
+
     }
 }
