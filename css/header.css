@@ -134,7 +134,8 @@ header{
 header>section:nth-of-type(2){
     display: flex;
     flex-direction: column;
-    align-content: flex-start;    
+    align-content: flex-start;
+    cursor: pointer;    
 }
 
 h1{
@@ -161,6 +162,7 @@ header>section:nth-of-type(2) button{
     0 0 24px #8fa63f;
     background-color: var(--gravel);
     border: none;
+    cursor: inherit;
 }
 
 
