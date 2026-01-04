@@ -148,52 +148,52 @@ main #btnRegistro:active {
 /* GRID DEL FORMULARIO. feat Sergio */
 /* Esto ha sido más complicado de lo que debería*/
 
-main form {
+main form div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 /* Cada fieldset ocupa una celda completa de la grid */
-main form > fieldset {
+main form div > fieldset {
   box-sizing: border-box;
 }
 
 /* El tercer fieldset (Intereses) debe ocupar el ancho completo */
-main form > fieldset:nth-of-type(3) {
+main form div > fieldset:nth-of-type(3) {
   grid-column: 1 / -1;
 }
 
 /* El fieldset Intereses es trans (se transforma en grid) */
-main form > fieldset:nth-of-type(3) {
+main form div > fieldset:nth-of-type(3) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 /* Dentro de Intereses, cada fieldset hijo es un ítem de la grid */
-main form > fieldset:nth-of-type(3) > fieldset {
+main form div > fieldset:nth-of-type(3) > fieldset {
   box-sizing: border-box;
 }
 
 /* El último fieldset (Otros) ocupa todo el ancho debajo */
-main form > fieldset:nth-of-type(3) > fieldset:last-of-type {
+main form div> fieldset:nth-of-type(3) > fieldset:last-of-type {
   grid-column: 1 / -1;
 }
 
 /* Pum, responsive */
 @media (max-width: 768px) {
-  main form {
+  main form div {
     grid-template-columns: 1fr;
   }
 
-  main form > fieldset:nth-of-type(3) {
+  main form div > fieldset:nth-of-type(3) {
     grid-template-columns: 1fr;
   }
 }
 
 
-/* Efecto parallax para el fondo del formulario, el orginnal es de https://codepen.io/vo0vka/pen/zYrWdwb
+/* Efecto parallax para el fondo del formulario, el original es de https://codepen.io/vo0vka/pen/zYrWdwb
 lo he adaptado a este contenedor */
 main section {
     position: relative;
