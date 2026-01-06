@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- TO DO: titulo, favicon -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/game.css">
+    <link rel="stylesheet" href="../../css/game1.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="contenedorJuego">
+            <!-- Esto es el div que contiene el juego -->
+            <div id="juego">
+                <!-- Este div sería la raíz del juego, su base. Se puede sustituir por lo que sea cuando metamos un juego -->
+                
+                <div id="game-container">
+                    <div id="progress-bar"></div>
+
+                    <div id="controls">
+                        <button id="btn-play">PLAY</button>
+                        <button id="btn-rec">REC LOOP</button>
+                        <button id="btn-clear">BORRAR LOOP</button>
+                        <button id="btn-upload" class="upload-btn">SUBIR BEAT</button>
+                    </div>
+
+                    <!-- Sliding Toggle for UI -->
+                    <div id="ui-toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-ui" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="toggle-label">ICONOS</span>
+                    </div>
+
+                    <div id="ui-layer">
+                        <!-- Keys will be injected here -->
+                    </div>
+
+                    <div id="sparks-layer"></div>
+
+                    <div id="instructions">Pulsa tu teclado para tocar · Pulsa ICONOS oculatrlos/mostrarlos</div>
+
+                    <!-- Upload Modal (Renamed class) -->
+                    <div id="upload-modal" class="game1modal hidden">
+                        <div class="modal-content">
+                            <h2>Upload Your Beat</h2>
+                            <form id="upload-form">
+                                <div class="form-group">
+                                    <label for="beat-name">Beat Name</label>
+                                    <input type="text" id="beat-name" required placeholder="My Awesome Beat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="beat-category">Category</label>
+                                    <select id="beat-category" required>
+                                        <option value="electronic">Electronic</option>
+                                        <option value="hiphop">Hip Hop</option>
+                                        <option value="rock">Rock</option>
+                                        <option value="jazz">Jazz</option>
+                                        <option value="classical">Classical</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="modal-actions">
+                                    <button type="button" id="btn-cancel-upload">Cancel</button>
+                                    <button type="submit" id="btn-confirm-upload" class="primary">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Toast Notification -->
+                    <div id="toast" class="toast hidden">Beat uploaded successfully!</div>
+                </div>
+
+            </div>
+        </div>
+
+        <button id="modoTeatroBtn">Modo Teatro</button>
+        <!-- Botón para alterar las dimensiones del juego -->
+        <!-- Recomendable cambiarlo por la típica imagen de expandir -->
+        <div class="noise"></div>
+    </main>
+    <footer></footer>
+    <script src="../../scripts/header.js"></script>
+    <script src="../../scripts/game.js"></script>
+    <script src="../../scripts/footer.js"></script>
+    <script src="../../scripts/game2.js"></script>
+</body>
+
+</html>

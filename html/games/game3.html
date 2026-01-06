@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- TO DO: titulo, favicon -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/game.css">
+    <link rel="stylesheet" href="../../css/game3.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="contenedorJuego">
+            <!-- Esto es el div que contiene el juego -->
+            <div id="juego">
+                <div id="game-container">
+                    <div id="selectorEscalaContainer">
+                        <label for="selectorEscala">Escala modal:</label>
+                        <select id="selectorEscala">
+                            <option value="jonico">Jónico</option>
+                            <option value="dorico">Dórico</option>
+                            <option value="frigio">Frigio</option>
+                            <option value="lidio">Lidio</option>
+                            <option value="mixolidio">Mixolidio</option>
+                            <option value="eolico">Eólico</option>
+                            <option value="locrio">Locrio</option>
+                        </select>
+                    </div>
+                    <canvas id="gameCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <button id="modoTeatroBtn">Modo Teatro</button>
+        <!-- Botón para alterar las dimensiones del juego -->
+        <!-- Recomendable cambiarlo por la típica imagen de expandir -->
+        <div class="noise"></div>
+    </main>
+    <footer></footer>
+    <script src="../../scripts/header.js"></script>
+    <script src="../../scripts/game.js"></script>
+    <script src="../../scripts/footer.js"></script>
+    <script src="../../scripts/game3.js"></script>
+</body>
+
+</html>
