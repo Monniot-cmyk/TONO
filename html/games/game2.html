@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electroplankton Web</title>
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/game2.css">
+</head>
+<body>
+    <header></header>
+   <main>
+        <div id="contenedorJuego">
+            <!-- Interfaz de Usuario -->
+            <div id="interfazUsuario" class="game-ui">
+                <div id="paleta" class="palette">
+                    <div class="palette-item color-1" draggable="true" data-color-index="0"></div>
+                    <div class="palette-item color-2" draggable="true" data-color-index="1"></div>
+                    <div class="palette-item color-3" draggable="true" data-color-index="2"></div>
+                    <div class="palette-item color-4" draggable="true" data-color-index="3"></div>
+                </div>
+                <div class="controls">
+                    <button id="btnLimpiar">Limpiar Tablero</button>
+                    <button id="btnSubir" class="primary">Subir Beat</button>
+                </div>
+            </div>
+
+            <!-- Tablero de Juego -->
+            <div id="juego2">
+                <!-- La rejilla se generará aquí -->
+            </div>
+        </div>
+
+        <div class="noise"></div>
+
+        <!-- Overlay de Inicio -->
+        <div id="overlayInicio" class="overlay">
+            <div class="overlay-content">
+                <h2>Haz Click para Iniciar</h2>
+                <p>Activar Audio y Juego</p>
+            </div>
+        </div>
+
+        <!-- Modal de Subida -->
+        <div id="modalSubida" class="modal">
+            <div class="modal-content">
+                <h2>Subir Beat</h2>
+                <div class="form-group">
+                    <label>Nombre de la melodía</label>
+                    <input type="text" id="nombreBeat" placeholder="Mi Gran Obra">
+                </div>
+                <div class="form-group">
+                    <label>Género Musical</label>
+                    <select id="generoBeat">
+                        <option value="ambient">Ambient</option>
+                        <option value="techno">Techno</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="experimental">Experimental</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button id="btnCancelarSubida">Cancelar</button>
+                    <button class="primary" id="btnConfirmarSubida">Subir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificación -->
+        <div id="notificacion" class="notification"></div>
+    </main>
+    <footer></footer>
+    <script src="../../scripts/header.js"></script>
+    <script src="../../scripts/game2.js"></script>
+    <script src="../../scripts/footer.js"></script>
+</body>
+</html>
