@@ -70,7 +70,7 @@ main {
     var(--pumice) 0%, 
     var(--santas-gray)70%,
     var(--mountain-mist)99%);
-    min-height: 60vw;
+    min-height: 10vh;
     overflow: hidden;
     flex: 1 0 auto;
 }
@@ -93,13 +93,7 @@ body {
     font-family: 'Century Gothic', sans-serif;
 }
 
-
-
-
-
-
-
-                            /* OPCIONES DEL HEADER COMO TAL */
+ /* OPCIONES DELHEADER COMO TAL */
 header{
     background-color: var(--gravel);
     display: flex;
@@ -108,9 +102,6 @@ header{
     position: relative; 
     /* Lo del header en relative es para que el nav lo tome como referencia */
 }
-
-
-
 
 /* PRIMERA SECCION */
 /* Es la de la imagen del logo, menudo cristo para aplicarle el glow */
@@ -128,7 +119,6 @@ header{
     drop-shadow(0 0 40px #a6b54f)
     drop-shadow(0 0 120px #8fa63f);
 }
-
 
 /* SEGUNA SECCION */
 /* Titulo de la pag y boton que despliega el nav */
@@ -165,7 +155,6 @@ header>section:nth-of-type(2) button{
     border: none;
     cursor: inherit;
 }
-
 
 /* TERCERA SECCION */
 /* Boton de login  */
@@ -205,10 +194,6 @@ header>section:nth-of-type(2) button{
     padding: 0;
 }
 
-
-
-
-
 #opcionesCuenta { 
     display: none; 
 }
@@ -217,12 +202,6 @@ header>section:nth-of-type(2) button{
     display: block; 
     z-index: 1000;
 }
-
-
-
-
-
-
 
 /* NAV */
 /* Oculto por defecto, se muestra como un desplegable al pulsar el boton */
@@ -267,13 +246,6 @@ nav>ul>li>a:hover {
     0 0 14px #8fa63f;
 }
 
-
-
-
-
-
-
-
 body.guest [data-estado="guest"] { 
     display: block; 
 }
@@ -304,8 +276,6 @@ body.user [data-estado="user"] {
     font-weight: bold;
     margin: 0.5em;
 }
-
-
 
 /* Todo lo del modal para el login */
 
