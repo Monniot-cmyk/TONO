@@ -330,7 +330,7 @@ body.user [data-estado="user"] {
 }
 
 #loginModal {
-    background-color: var(--ecru-white);
+    background-color: var(--gravel);
     padding: 2.5rem 2rem;
     border-radius: 16px;
     width: 100%;
