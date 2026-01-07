@@ -14,7 +14,17 @@
 
 main{
     display: flex;
-    justify-content: center;
+	flex-direction: column;
+    align-items: center;
+	padding: 3em 15em;
+}
+
+main>section{
+	margin: 3em 0;
+}
+
+main>section>p{
+	color: var(--deep);
 }
 
 /* El slideshow viene de: https://codepen.io/rokobuljan/pen/XXzqKQ */
@@ -47,9 +57,61 @@ main{
 }
 
 .CSSgal .slide-1{
-    background-image: url(/img/img/image.png);
+    background-image: url(/img/img/spark.png);
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
+.CSSgal .slide-1::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.CSSgal .slide-1 > *{
+    position: relative;
+    z-index: 2;
+}
+
+.CSSgal .slide-1 h2,
+.CSSgal .slide-1 p
+.CSSgal .slide-1 a{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+
+
+.CSSgal .slide-3{
+    background-image: url(/img/img/chords.png);
+	text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.CSSgal .slide-3::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.CSSgal .slide-3 > *{
+    position: relative;
+    z-index: 2;
+}
+
+.CSSgal .slide-3 h2,
+.CSSgal .slide-3 p
+.CSSgal .slide-3 a{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
 
 
 /* PREV/NEXT, CONTAINERS & ANCHORS */
@@ -74,9 +136,9 @@ main{
 	text-align: center;
 	opacity: 0.7;
 	-webkit-transition: 0.3s;
-					transition: 0.3s;
+			transition: 0.3s;
 	-webkit-transform: translateY(-50%);
-					transform: translateY(-50%);
+			transform: translateY(-50%);
 	left: 0;
 }
 .CSSgal .prevNext a:hover {
@@ -163,6 +225,6 @@ main{
 .CSSgal a {
 	border-radius: 50%;
 	margin: 0 3px;
-	color: var(--asparagus);
+	color: var(--olive-green);
 	text-decoration: none;
 }
