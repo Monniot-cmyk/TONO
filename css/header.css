@@ -57,11 +57,12 @@ main > * {
 
 
    /* FIX GLOBAL */
-main *,
+   /* Sergio: He comentado esto porque hace cosas raras con los juegos (por eso de que afecte a todo lo que está en el main). Si alguien ve que por comentarlo da un fallo otro lado que lo descomente y lo solucione, salu3 :D */
+/* main *,
 main *::before,
 main *::after {
     box-sizing: border-box;
-}
+} */
 
 /* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
 main {

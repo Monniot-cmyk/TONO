@@ -15,12 +15,15 @@ los colores de ahora son de prueba */
 --finch: #545841;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 main {
     display: flex;
     justify-content: center;
     padding: 4rem 1rem;
 }
-
 
 /* CONTENEDOR */
 main section {

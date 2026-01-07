@@ -14,28 +14,33 @@
 
 footer {
     display: flex;
+    justify-content: center;
     background-color: var(--dark-gravel);
     padding: 2em;
-    justify-content: space-evenly;
+    flex-wrap: nowrap;
 }
 
 footer>section:first-of-type{
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 footer>section>img{
     width: 70px;
+    margin: 0 auto;
 }
 
 footer>section h4{
     font-family: 'Moonrising', 'Century Gothic', sans-serif;
     color: var(--olive-green);
     letter-spacing: 0.2em;
+    font-size: 0.9rem;
 }
 
 footer>section{
-    margin: 0 3em;
+    margin: 0 2%;
+    width: 25%;
 }
 
 footer>section>ul{
