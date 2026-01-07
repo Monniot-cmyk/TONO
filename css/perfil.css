@@ -70,3 +70,113 @@
     box-shadow: 0 10px 20px rgba(223, 224, 170, 0.25);
     transform: scale(1.02);
 }
+
+/* RESPONSIVE
+Para moviles */
+@media (max-width: 480px) {
+
+    .logout-main {
+        padding: 1em;
+    }
+
+    .logout-card {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+
+    .logout-card h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .perfil-avatar {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0.8rem;
+    }
+
+    .perfil-nombre {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .perfil-info {
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .logout-card button {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+
+    .logout-main {
+        padding: 2em;
+    }
+
+    .logout-card {
+        padding: 2.3rem 2rem;
+        max-width: 350px;
+    }
+
+    .logout-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .perfil-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .perfil-nombre {
+        font-size: 1.1rem;
+    }
+
+    .perfil-info {
+        font-size: 0.9rem;
+    }
+
+    .logout-card button {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
+
+    .logout-main {
+        padding: 3em;
+    }
+
+    .logout-card {
+        padding: 2.5rem 3rem;
+        max-width: 400px;
+    }
+
+    .logout-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .perfil-avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    .perfil-nombre {
+        font-size: 1.2rem;
+    }
+
+    .perfil-info {
+        font-size: 1rem;
+    }
+
+    .logout-card button {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+}

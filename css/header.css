@@ -413,3 +413,122 @@ body.user [data-estado="user"] {
         font-size: 0.9rem;
     }
 }
+
+/* RESPONSIVE */
+/* Para móviles  */
+@media (max-width: 480px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 1.5em;
+    }
+
+    header > section:nth-of-type(2) {
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.5em;
+    }
+
+    nav {
+        width: 90%;
+        padding: 0.8em 1em;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        gap: 0.8em;
+        align-items: center;
+    }
+
+    #btnCuenta {
+        gap: 0.3em;
+    }
+
+    #btnCuenta svg {
+        width: 40px;
+    }
+
+    #loginModal {
+        max-width: 90%;
+        padding: 1.5rem 1rem;
+    }
+
+    #loginModal h2 {
+        font-size: 1.4rem;
+    }
+
+    #loginModal input, #loginModal button {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    header {
+        padding: 1em 2em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        letter-spacing: 0.18em;
+        text-align: center;
+    }
+
+    nav {
+        width: 80%;
+        padding: 1em 1.5em;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+
+    #btnCuenta svg {
+        width: 45px;
+    }
+
+    #loginModal {
+        max-width: 400px;
+        padding: 2rem 1.5rem;
+    }
+
+    #loginModal h2 {
+        font-size: 1.6rem;
+    }
+
+    #loginModal input, #loginModal button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1200px) {
+    main {
+        min-height: 50vw;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        letter-spacing: 0.25em;
+    }
+
+    #btnCuenta svg {
+        width: 55px;
+    }
+
+    #loginModal {
+        max-width: 380px;
+        padding: 2.5rem 2rem;
+    }
+}
