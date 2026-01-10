@@ -21,12 +21,16 @@ main{
 }
 
 
-main>section{
+main>section:not(:first-of-type){
+    /* border: solid fuchsia; */
+    width: 90%;
+    max-width: 90em;
     margin: 3em 0;
 }
 
 
-main>section:first-of-type {
+main>section:nth-of-type(2)
+main>section:nth-of-type(3) {
     padding: 3em 15%;
     text-align: center;
     margin: 0 auto;
@@ -43,8 +47,6 @@ main>section>p{
 .CSSgal {
     position: relative;
     overflow: hidden;
-    width: 90%;
-    max-width: 90em;
     aspect-ratio: 16/9;
     background-color: var(--deep);
     margin: 0 auto;
@@ -261,6 +263,17 @@ main>section>p{
     color: var(--olive-green);
     text-decoration: none;
 }
+/* Fix para las flechas en la carga del index */
+.CSSgal .slide-1::before,
+.CSSgal .slide-3::before {
+    pointer-events: none;
+}
+
+.CSSgal .prevNext {
+    z-index: 10;
+    pointer-events: auto;
+}
+
 
 
 
@@ -274,7 +287,7 @@ main>section>p{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: radial-gradient(ellipse at bottom, var(--deep) 7%, var(--gravel) 100%);
+    background: radial-gradient(ellipse at bottom, var(--deep) 0%, var(--gravel) 90%);
 }
 
 

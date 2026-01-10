@@ -146,7 +146,8 @@ const ul = document.createElement("ul");
 const juegos = [
   { texto: "Juego 1", href: "/html/games/game1.html" },
   { texto: "Juego 2", href: "/html/games/game2.html" },
-  { texto: "Juego 3", href: "/html/games/game3.html" }
+  { texto: "Juego 3", href: "/html/games/game3.html" },
+  { texto: "Resultados", href: "/html/stats/stats.html" }
 ];
 
 juegos.forEach(juego => {
