@@ -156,6 +156,20 @@ header>section:nth-of-type(2) button{
     cursor: inherit;
 }
 
+/* Animación para el botón :D */
+#btnMenu {
+    margin: 0 auto;
+    width: 20px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+header:has(nav.mostrar) #btnMenu {
+    transform: rotate(180deg);
+}
+
+
+
 /* TERCERA SECCION */
 /* Boton de login  */
 #btnCuenta {
@@ -194,12 +208,9 @@ header>section:nth-of-type(2) button{
     padding: 0;
 }
 
-#opcionesCuenta { 
-    display: none; 
-}
+
 
 #opcionesCuenta.mostrar { 
-    display: block; 
     z-index: 1000;
 }
 
@@ -209,18 +220,31 @@ nav {
     position: absolute;
     top: 105%;
     left: 50%;
-    transform: translateX(-50%); /* centrado real */
+    transform: translateX(-50%) translateY(-10px);
     width: 70%;
     background-color: var(--gravel);
     padding: 1em 2em;
-    display: none;
     z-index: 999;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    /* ANIMACIÓN */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 nav.mostrar {
-    display: block;
+    opacity: 1;
+    max-height: 500px; /* suficiente para el menú */
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
 }
 
 nav>ul{
@@ -257,17 +281,33 @@ body.user [data-estado="user"] {
 
 /* Desplegable de opciones de la cuenta */
 #opcionesCuenta {
-    display: none;
     position: absolute;
+    top: 105%;
     background: var(--gravel);
     padding: 1em;
-    top: 105%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border-radius: 10px;
+
+    /* Animacion */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 1000;
 }
 
 #opcionesCuenta.mostrar {
-    display: block;
+    opacity: 1;
+    max-height: 300px;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 #opcionesCuenta a {
@@ -276,6 +316,20 @@ body.user [data-estado="user"] {
     font-weight: bold;
     margin: 0.5em;
 }
+
+#opcionesCuenta a,
+nav a {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav.mostrar a,
+#opcionesCuenta.mostrar a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Todo lo del modal para el login */
 
