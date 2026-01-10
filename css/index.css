@@ -6,6 +6,7 @@
 --mountain-mist: #97969c;
 --jumbo: #7e7d87;
 --salt-box: #67616d;
+--gravel: #49464d;
 --deep: #2e2b31;
 --olive-green: #a6b54f;
 --asparagus: #858e54;
@@ -259,4 +260,133 @@ main>section>p{
     margin: 0 3px;
     color: var(--olive-green);
     text-decoration: none;
+}
+
+
+
+
+
+
+
+/*  PARALLAX DE ESTRELLAS */
+.stars-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, var(--deep) 7%, var(--gravel) 100%);
+}
+
+
+/*  ESTRELLAS PEQUEÑAS  */
+#stars {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow:
+        12px 34px #FFF, 56px 890px #FFF, 123px 456px #FFF, 234px 1789px #FFF,
+        345px 678px #FFF, 456px 1234px #FFF, 567px 345px #FFF, 678px 1890px #FFF,
+        789px 456px #FFF, 890px 123px #FFF, 901px 1789px #FFF, 1023px 654px #FFF,
+        1123px 987px #FFF, 1234px 321px #FFF, 1345px 1500px #FFF,
+        1456px 789px #FFF, 1567px 456px #FFF, 1678px 1345px #FFF,
+        1789px 234px #FFF, 1890px 1678px #FFF,
+        200px 1800px #FFF, 400px 1600px #FFF, 600px 1400px #FFF,
+        800px 1200px #FFF, 1000px 1000px #FFF, 1200px 800px #FFF,
+        1400px 600px #FFF, 1600px 400px #FFF, 1800px 200px #FFF;
+    animation: animStar 50s linear infinite;
+    opacity: 0.6;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  ESTRELLAS MEDIANAS  */
+#stars2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow:
+        150px 600px #FFF, 350px 1400px #FFF, 550px 300px #FFF,
+        750px 1100px #FFF, 950px 1700px #FFF, 1150px 500px #FFF,
+        1350px 900px #FFF, 1550px 1300px #FFF, 1750px 200px #FFF,
+        300px 1600px #FFF, 600px 900px #FFF, 900px 1400px #FFF;
+    animation: animStar 100s linear infinite;
+    opacity: 0.4;
+}
+
+#stars2::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  ESTRELLAS GRANDES  */
+#stars3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow:
+        300px 700px #FFF,
+        700px 1300px #FFF,
+        1100px 400px #FFF,
+        1500px 900px #FFF,
+        1800px 1500px #FFF,
+        500px 300px #FFF;
+    animation: animStar 150s linear infinite;
+    opacity: 0.8;
+}
+
+#stars3::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  TEXTO CENTRAL  */
+#title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    z-index: 10;
+    padding-left: 10px;
+}
+
+/*  Animacion para las estrellas*/
+
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
 }
