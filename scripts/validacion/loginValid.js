@@ -42,8 +42,11 @@ const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
 
+  const userInput = document.getElementById("user").value;
+
   // Simulación de login correcto
   localStorage.setItem("userLogged", "true");
+  localStorage.setItem("userName", userInput);
 
   overlay.classList.remove("mostrar");
 
@@ -57,6 +60,7 @@ if (logout) {
   logout.addEventListener("click", e => {
     e.preventDefault();
     localStorage.removeItem("userLogged");
+    localStorage.removeItem("userName");
     location.reload();
   });
 }

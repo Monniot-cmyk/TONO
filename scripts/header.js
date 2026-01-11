@@ -187,6 +187,16 @@ sectionTitle.addEventListener("click", () => {
 
 //  CONTROL DE ESTADO DE USUARIO (simulado por que no hay backend)
 const isLogged = localStorage.getItem("userLogged") === "true";
+
+if (isLogged) {
+  const userName = localStorage.getItem("userName");
+  const spanCuenta = accountButton.querySelector("span");
+
+  if (userName && spanCuenta) {
+    spanCuenta.textContent = userName;
+  }
+}
+
 document.body.classList.add(isLogged ? "user" : "guest");
 
 //  VISIBILIDAD DE OPCIONES SEGÚN ESTADO 

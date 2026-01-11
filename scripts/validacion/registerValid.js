@@ -62,6 +62,10 @@ form.addEventListener("submit", (e) => {
 
     // Guardar en sessionStorage con el nombre "usuarioRegistrado". Uso JSON porque es más escalable según chati.
     sessionStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioData)); //Como aparentemente no se pueden guardar objetos, se guarda en texto (stringify)
+    
+    // Simular login automático tras el registro
+    localStorage.setItem("userLogged", "true");
+    localStorage.setItem("userName", usuario); // 👈 nombre que se verá en el header
 
     // Redirección al index
     window.location.href = "../../index.html";
