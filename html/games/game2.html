@@ -3,89 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- TO DO: titulo, favicon -->
+    <title>TONO -</title>
+    <!-- TO DO: titulo -->
+    <link rel="shortcut icon" href="../../img/logoVerde.svg" type="image/x-icon">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/game.css">
-    <link rel="stylesheet" href="../../css/game1.css">
+    <link rel="stylesheet" href="../../css/game2.css">
 </head>
 <body>
     <header></header>
+
     <main>
+
         <div id="contenedorJuego">
-            <!-- Esto es el div que contiene el juego -->
             <div id="juego">
-                <!-- Este div sería la raíz del juego, su base. Se puede sustituir por lo que sea cuando metamos un juego -->
-                
                 <div id="game-container">
-                    <div id="progress-bar"></div>
-
-                    <div id="controls">
-                        <button id="btn-play">PLAY</button>
-                        <button id="btn-rec">REC LOOP</button>
-                        <button id="btn-clear">BORRAR LOOP</button>
-                        <button id="btn-upload" class="upload-btn">SUBIR BEAT</button>
+                    <!-- CONTROLES SUPERIORES -->
+                    <div id="top-controls">
+                        <div class="controls-left">
+                            <!-- Botón Play/Pause -->
+                            <button id="btn-play" class="control-btn" title="Reproducir">
+                                <span class="icon">▶</span>
+                            </button>
+                            <!-- Botón Stop -->
+                            <button id="btn-stop" class="control-btn" title="Detener">
+                                <span class="icon">⏹</span>
+                            </button>
+                            <!-- Botón Borrar todo -->
+                            <button id="btn-clear" class="control-btn" title="Borrar todo">
+                                <span class="icon">🗑</span>
+                            </button>
+                            <!-- Botón Subir beat (NUEVO) -->
+                            <button id="btn-upload" class="control-btn" title="Subir beat">
+                                <span class="icon">📤</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Control de velocidad -->
+                        <div id="speed-control">
+                            <input type="range" id="speed-slider" min="0.5" max="5" step="0.1" value="1">
+                            <span id="speed-value">1.0x</span>
+                        </div>
                     </div>
 
-                    <!-- Sliding Toggle for UI -->
-                    <div id="ui-toggle-container">
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-ui" checked>
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="toggle-label">ICONOS</span>
+                    <!-- ÁREA PRINCIPAL DEL JUEGO -->
+                    <div id="main-area">
+                        <!-- PANEL LATERAL DE FIGURAS -->
+                        <div id="shapes-panel">
+                            <!-- Título del panel -->
+                            <!-- <h3>FIGURAS</h3> -->
+                            
+                            <!-- FILA DE CÍRCULOS - todos en una línea -->
+                            <div class="shape-row">
+                                <!-- Círculo pequeño -->
+                                <div class="shape" data-type="circle" data-size="small">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Círculo mediano -->
+                                <div class="shape" data-type="circle" data-size="medium">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Círculo grande -->
+                                <div class="shape" data-type="circle" data-size="large">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Círculo extra grande -->
+                                <div class="shape" data-type="circle" data-size="xlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Círculo doble extra grande -->
+                                <div class="shape" data-type="circle" data-size="xxlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- FILA DE TRIÁNGULOS - todos en una línea -->
+                            <div class="shape-row">
+                                <!-- Triángulo pequeño -->
+                                <div class="shape" data-type="triangle" data-size="small">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Triángulo mediano -->
+                                <div class="shape" data-type="triangle" data-size="medium">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Triángulo grande -->
+                                <div class="shape" data-type="triangle" data-size="large">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Triángulo extra grande -->
+                                <div class="shape" data-type="triangle" data-size="xlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Triángulo doble extra grande -->
+                                <div class="shape" data-type="triangle" data-size="xxlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- FILA DE CUADRADOS - todos en una línea -->
+                            <div class="shape-row">
+                                <!-- Cuadrado pequeño -->
+                                <div class="shape" data-type="square" data-size="small">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Cuadrado mediano -->
+                                <div class="shape" data-type="square" data-size="medium">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Cuadrado grande -->
+                                <div class="shape" data-type="square" data-size="large">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Cuadrado extra grande -->
+                                <div class="shape" data-type="square" data-size="xlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                                <!-- Cuadrado doble extra grande -->
+                                <div class="shape" data-type="square" data-size="xxlarge">
+                                    <div class="shape-preview"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- HERRAMIENTA DE BORRADO -->
+                            <div id="eraser-tool" class="shape">
+                                <div class="shape-preview">✖</div>
+                            </div>
+                        </div>
+
+                        <!-- ÁREA DE PARTITURA -->
+                        <div id="score-section">
+                            <!-- Timeline para control de posición -->
+                            <div id="timeline-area">
+                                <div id="timeline-track">
+                                    <div id="timeline-ruler"></div>
+                                    <!-- Slider de timeline -->
+                                    <input type="range" id="timeline-slider" min="0" max="2000" value="0">
+                                </div>
+                            </div>
+                            
+                            <!-- Contenedor de la partitura con scroll -->
+                            <div id="score-container-wrapper">
+                                <!-- Partitura principal -->
+                                <div id="score-container">
+                                    <!-- Línea de reproducción (playhead) -->
+                                    <div id="playhead"></div>
+                                    <!-- Aquí se añaden las notas dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="ui-layer">
-                        <!-- Keys will be injected here -->
+                    <!-- INSTRUCCIONES -->
+                    <div id="instructions">
+                        Arrastra figuras a la partitura • Click derecho para borrar • La altura controla la nota
                     </div>
 
-                    <div id="sparks-layer"></div>
-
-                    <div id="instructions">Pulsa tu teclado para tocar · Pulsa ICONOS oculatrlos/mostrarlos</div>
-
-                    <!-- Upload Modal (Renamed class) -->
-                    <div id="upload-modal" class="game1modal hidden">
+                    <!-- MODAL PARA SUBIR BEAT (OCULTO INICIALMENTE) -->
+                    <div id="upload-modal" class="modal hidden">
                         <div class="modal-content">
-                            <h2>Upload Your Beat</h2>
+                            <h2>📤 Subir Beat</h2>
                             <form id="upload-form">
                                 <div class="form-group">
-                                    <label for="beat-name">Beat Name</label>
-                                    <input type="text" id="beat-name" required placeholder="My Awesome Beat">
-                                </div>
-                                <div class="form-group">
-                                    <label for="beat-category">Category</label>
-                                    <select id="beat-category" required>
-                                        <option value="electronic">Electronic</option>
-                                        <option value="hiphop">Hip Hop</option>
-                                        <option value="rock">Rock</option>
-                                        <option value="jazz">Jazz</option>
-                                        <option value="classical">Classical</option>
-                                        <option value="other">Other</option>
-                                    </select>
+                                    <input type="text" id="beat-name" required placeholder="Nombre de tu beat">
                                 </div>
                                 <div class="modal-actions">
-                                    <button type="button" id="btn-cancel-upload">Cancel</button>
-                                    <button type="submit" id="btn-confirm-upload" class="primary">Upload</button>
+                                    <button type="button" id="btn-cancel-upload">Cancelar</button>
+                                    <button type="submit" id="btn-confirm-upload" class="primary">Subir Beat</button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <!-- Toast Notification -->
-                    <div id="toast" class="toast hidden">Beat uploaded successfully!</div>
+                    <!-- TOAST NOTIFICATION (OCULTO INICIALMENTE) -->
+                    <div id="toast" class="toast hidden">
+                        ¡Beat subido exitosamente!
+                    </div>
                 </div>
-
             </div>
         </div>
 
+
         <button id="modoTeatroBtn">Modo Teatro</button>
-        <!-- Botón para alterar las dimensiones del juego -->
-        <!-- Recomendable cambiarlo por la típica imagen de expandir -->
-        <div class="noise"></div>
+
     </main>
+
     <footer></footer>
+
     <script src="../../scripts/header.js"></script>
     <script src="../../scripts/game.js"></script>
     <script src="../../scripts/footer.js"></script>
