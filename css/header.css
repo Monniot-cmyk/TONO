@@ -77,10 +77,6 @@ main {
     flex: 1 0 auto;
 }
 
-/* El div .noise ya no es necesario en el HTML, se usa el pseudo-elemento ::before */
-.noise {
-    display: none; /* Ocultar por si acaso queda en el HTML */
-}
 
 html, body {
     height: 100%;
@@ -93,6 +89,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Century Gothic', sans-serif;
+    font-size: 18px;
 }
 
  /* OPCIONES DELHEADER COMO TAL */

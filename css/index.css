@@ -21,21 +21,13 @@ main{
 }
 
 
-main>section:not(:first-of-type){
+main>section:not(:first-of-type):not(.olas){
     /* border: solid fuchsia; */
     width: 90%;
     max-width: 90em;
     margin: 3em 0;
-}
-
-
-main>section:nth-of-type(2)
-main>section:nth-of-type(3) {
-    padding: 3em 15%;
     text-align: center;
-    margin: 0 auto;
 }
-
 
 main>section>p{
     color: var(--deep);
@@ -285,9 +277,9 @@ main>section>p{
 .stars-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
-    background: radial-gradient(ellipse at bottom, var(--deep) 0%, var(--gravel) 90%);
+    background: radial-gradient(ellipse at bottom, #232025 0%, var(--gravel) 90%);
 }
 
 
@@ -393,8 +385,6 @@ main>section>p{
 }
 
 /*  Animacion para las estrellas*/
-
-
 @keyframes animStar {
     from {
         transform: translateY(0);
@@ -402,4 +392,69 @@ main>section>p{
     to {
         transform: translateY(-2000px);
     }
+}
+
+
+
+
+.olas{
+    width: 100%;
+    margin: 6em 0 0;
+    position: relative;
+    background: transparent;
+}
+
+.olas, .olas *{
+    width: 100%;
+    background-color: transparent;
+}
+
+.olasTexto{
+    position: relative;
+    z-index: 5;
+    margin-bottom: 2rem;
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    color: var(--off-white);
+    letter-spacing: 0.2em;
+    font-size: clamp(1.2em, 3vw, 1.8em);
+    text-shadow:
+        0 0 4px rgba(248,255,255,0.4),
+        0 0 10px rgba(166,181,79,0.25);
+    text-align: center;
+}
+
+.ocean{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 6400px;
+    height: 200px;
+
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath fill='%23ffffff' fill-opacity='0.25' d='M0,80 C150,20 350,140 600,80 850,20 1050,140 1200,80 L1200,200 L0,200 Z'/%3E%3C/svg%3E") repeat-x;
+
+    animation: waveMove 18s linear infinite;
+    pointer-events: none;
+}
+
+.wave:nth-of-type(2){
+    bottom: -20px;
+    opacity: 0.7;
+    animation: waveMove 26s linear infinite, waveFloat 9s ease-in-out infinite;
+}
+
+@keyframes waveMove{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-1600px); }
+}
+
+@keyframes waveFloat{
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-10px); }
 }
