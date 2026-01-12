@@ -60,6 +60,7 @@ main {
   background-color: #adb47e33; 
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
 }
 
 .stats-card:hover {
@@ -102,74 +103,108 @@ main {
   margin-top: 0.3rem;
 }
 
-/* Fondo de montañas animado */
-.mountains-bg {
+/* Onda animada */
+.stats-card {
+  position: relative; 
+}
+
+/* Contenedor de barras */
+.wave-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;           
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 320px;
-  pointer-events: none;
-  opacity: 0.45;
-  z-index: 0;
+  right: 5rem;      /* más distancia del borde derecho */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.mountains-bg .mountain {
+.wave-button-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espacio entre onda y botón */
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  background-repeat: repeat-x;
-  background-size: contain;
-  animation: mountain-move linear infinite;
+  right: 15rem; 
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.mountains-bg .mountain--back {
-  height: 456px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='356' viewBox='0 0 690 356' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M690 69C678.369 72.673 667.732 78.672 656.946 81C638.484 84.984 626.335 70.478 610.946 71C591.762 71.651 600.724 93.142 563.946 84C556.497 82.148 541.629 67.277 530.946 65C524.55 63.637 523.077 70.842 516.946 70C508.693 68.867 500.983 71.197 495.628 71.614C477.544 73.02 484.605 83.397 464.765 84.93C452.69 85.863 454.961 85.562 447.947 79C425.784 58.268 423.729 61.166 392.946 77C389.555 78.745 383.322 61.821 365.946 54C350.011 46.827 322.208 61.438 309.946 55C305.696 52.768 296.225 40.001 290.946 37C286.235 34.321 285.771 41.428 280.946 39C264.813 30.881 250.878 3.596 238.946 0.999996C228.874 -1.192 220.345 20.544 211.946 22C205.435 23.129 200.403 16.268 184.947 23C175.69 27.032 181.476 39.556 174.947 39C152.72 37.107 153.341 41.475 150.946 48C146.858 59.139 132.744 59.927 122.947 61C115.367 61.83 114.885 35.59 102.947 36C87.063 36.545 85.414 60.597 76.946 59C33.409 50.787 61.893 77.944 31.946 75C15.604 73.393 21.328 63.645 14.946 65C3.03801 67.529 1.59301 69.028 0 69V349L690 356L690 69Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='356' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%232C336A'/%3e%3cstop offset='1' stop-color='%232D346C'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  background-position-y: 40px;
-  animation-duration: 35s;
-  opacity: 0.3;
+/* Cada barra de la onda */
+.wave {
+  width: 6px;          /* más ancho */
+  border-radius: 9999px;
+  background-color: var( --finch); /* verde brillante */
+  animation: wave 1s ease-in-out infinite;
+  animation-delay: var(--i);
+  transform-origin: bottom;
 }
 
-.mountains-bg .mountain--mid {
-  height: 560px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='245' viewBox='0 0 690 245' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 130C24.589 114.234 49.303 80.075 64.946 69C73.557 62.904 102.228 68.806 119.946 63C147.857 53.854 162.909 12.118 220.396 8.88901C244.454 7.53701 237.97 44.826 291.946 46C318.118 46.569 352.714 0.0900071 370.946 1.00001C382.814 1.59301 399.732 13.754 418.184 27.618C429.957 36.464 449.838 38.331 461.946 46C472.903 52.94 479.14 64.021 488.946 66C508.192 69.885 513.886 60.213 532.946 65C582.129 77.351 591.441 128.243 690 127V245H0V130Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='245' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23323B79'/%3e%3cstop offset='1' stop-color='%234652AA'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  background-position-y: 70px;
-  animation-duration: 14s;
-  opacity: 0.5;
+/* Animación de escala vertical */
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.3); /* altura mínima más grande */
+  }
+  50% {
+    transform: scaleY(1.5); /* altura máxima más grande */
+  }
 }
 
-.mountains-bg .mountain--front {
-  height: 420px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='690' height='245' viewBox='0 0 690 245' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 130C24.589 114.234 49.303 80.075 64.946 69C73.557 62.904 102.228 68.806 119.946 63C147.857 53.854 162.909 12.118 220.396 8.88901C244.454 7.53701 237.97 44.826 291.946 46C318.118 46.569 352.714 0.0900071 370.946 1.00001C382.814 1.59301 399.732 13.754 418.184 27.618C429.957 36.464 449.838 38.331 461.946 46C472.903 52.94 479.14 64.021 488.946 66C508.192 69.885 513.886 60.213 532.946 65C582.129 77.351 591.441 128.243 690 127V245H0V130Z' fill='url(%23paint0_linear)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='0' y1='245' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23323B79'/%3e%3cstop offset='1' stop-color='%234652AA'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  background-position-y: 130px;
-  animation-duration: 25s;
-  opacity: 0.7;
+/* BOTÓN */
+.wave-button-container {
+    width: 12%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #818858;
+    text-shadow:
+        0 0 2px #eaf0c9,
+        0 0 12px #a6b54f;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.1s ease, transform 0.2s ease;
 }
 
-@keyframes mountain-move {
-  from { background-position-x: 0; }
-  to { background-position-x: -690px; }
+.wave-button-container:hover {
+  box-shadow: 0 10px 20px rgba(171, 172, 140, 0.25);
+  transform: scale(1.02);
 }
+
 
 /* RESPONSIVE */
-/* Para moviles */
+/* Para móviles */
 @media (max-width: 480px) {
-    .stats-feed {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-    .stats-card {
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .stats-avatar img {
-        width: 40px;
-        height: 40px;
-    }
-    .mountains-bg { height: 400px; }
+  .stats-feed {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+  }
+
+  /* La tarjeta pasa a columna */
+  .stats-card {
+      flex-direction: column;
+      align-items: flex-start; /* contenido a la izquierda */
+      gap: 0.6rem;
+  }
+
+  .stats-avatar img {
+      width: 40px;
+      height: 40px;
+  }
+
+  .stats-content {
+      width: 100%;
+      text-align: left;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .wave-button-container {
+    width: 20%;
+  }
+
 }
 
 /* Para tablets */
@@ -188,6 +223,16 @@ main {
         width: 50px;
         height: 50px;
     }
+
+    .wave-button-container {
+      position: static;     
+      flex-direction: column; 
+      align-items: center;
+      margin-top: 0.5rem;    
+      transform: none;       
+      gap: 0.5rem;          
+  }
+
 }
 
 /* Pantallas grandes */
@@ -205,6 +250,15 @@ main {
         width: 40px;
         height: 40px;
     }
-    .mountains-bg { height: 200px; }
+
+    .wave-button-container {
+      position: static;      
+      flex-direction: column; 
+      align-items: center;
+      margin-top: 0.5rem;    
+      transform: none;      
+      gap: 0.5rem;           
+  }
+   
 }
 
