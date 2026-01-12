@@ -11,6 +11,7 @@
     <title>TONO - Registro</title>
     <link rel="shortcut icon" href="../../img/logoVerde.svg" type="image/x-icon">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/register.css">
@@ -20,47 +21,74 @@
     <header></header>
 
     <main>
-        <section>
+        <section class="container">
             <h2>Formulario de registro</h2>
             <!-- parece mentira que a estas alturas no se a donde tiene que llevar el action de un form -->
             <!-- Also, ojo a la estructura que es un cristo pero no se me ha ocurrido como dejarlo mas claro -->
 
 
             <form id="formRegistro" action="../../index.html" method="post">
-                <div>
+                <div class="row g-4">
+
+                <!-- Datos personales -->
+                <div class="col-12 col-md-6">
                     <fieldset>
                         <legend>Datos personales</legend>
+
                         <label for="nombre">Nombre: </label>
                         <input type="text" name="nombre" id="nombre" required>
+
                         <label for="email">Correo electrónico: </label>
                         <input type="email" name="email" id="email" required>
                     </fieldset>
+                </div>
 
+                <!-- Datos de registro -->
+                <div class="col-12 col-md-6">
                     <fieldset>
                         <legend>Datos de registro</legend>
+
                         <label for="usuario">Nombre de usuario: </label>
                         <input type="text" name="usuario" id="usuario" required>
+
                         <label for="contraseña">Contraseña: </label>
                         <input type="password" name="contraseña" id="contraseña" required>
+
                         <label for="contraseña2">Repita la contraseña: </label>
                         <input type="password" name="contraseña2" id="contraseña2" required>
                     </fieldset>
+                </div>
 
+                <!-- Intereses musicales -->
+                <div class="col-12">
                     <fieldset>
                         <legend>Intereses musicales</legend>
-                            <label><input type="checkbox" name="musica[]" value="rock">Rock</label>
-                            <label><input type="checkbox" name="musica[]" value="electrónica">Electrónica</label>
-                            <label><input type="checkbox" name="musica[]" value="jazz">Jazz</label>
-                            <label><input type="checkbox" name="musica[]" value="ambient">Ambient</label>
 
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label><input type="checkbox" name="musica[]" value="rock"> Rock</label>
+                                <label><input type="checkbox" name="musica[]" value="jazz"> Jazz</label>
+                            </div>
 
-                            <label><input type="checkbox" id="otrosCheckbox">
-                            Otros (especifica)</label>
-                            <input type="text" id="otrosTexto" name="musica_otros" placeholder="Escribe aquí..." hidden>
+                            <div class="col-12 col-md-6">
+                                <label><input type="checkbox" name="musica[]" value="electrónica"> Electrónica</label>
+                                <label><input type="checkbox" name="musica[]" value="ambient"> Ambient</label>
+                            </div>
 
+                            <div class="col-12">
+                                <label>
+                                    <input type="checkbox" id="otrosCheckbox">
+                                    Otros (especifica)
+                                </label>
+                                <input type="text" id="otrosTexto" name="musica_otros" placeholder="Escribe aquí..." hidden>
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
-                <button type="submit" id="btnRegistro">Enviar y Registrarse</button>
+
+            </div>
+
+            <button type="submit" id="btnRegistro">Enviar y Registrarse</button>
             </form>
 
 
