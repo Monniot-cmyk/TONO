@@ -55,3 +55,7 @@ main #gameCanvas {
     background: #2e2b31;
     cursor: crosshair;
 }
+
+#gameCanvas {
+    background: #0e0d13;
+}
