@@ -6,7 +6,7 @@
 --mountain-mist: #97969c;
 --jumbo: #7e7d87;
 --salt-box: #67616d;
---deep: #2e2b31;
+--deep: #0e0d13;
 --olive-green: #a6b54f;
 --asparagus: #858e54;
 --finch: #545841;
@@ -258,95 +258,156 @@ main #instructions {
 }
 
 /* Modal (Renombrado a game1modal) */
-main .game1modal {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
+#upload-modal.game1modal {
+    position: absolute; /* ABSOLUTE dentro del contenedor del juego */
+    inset: 0; /* Cubre todo el game-container */
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 200;
-    backdrop-filter: blur(5px);
+    backdrop-filter: none; /* Sin blur */
+    opacity: 1;
+    pointer-events: auto;
     transition: opacity 0.3s;
 }
 
-main .modal-content {
+/* Clase para ocultar el modal - IGUAL que en el primer juego */
+#upload-modal.game1modal.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Contenido del modal */
+#upload-modal .modal-content {
     background: #1a1a1a;
     padding: 24px;
     border-radius: 12px;
     width: 300px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-main .modal-content h2 {
+/* Título del modal */
+#upload-modal .modal-content h2 {
     margin: 0 0 20px 0;
     font-size: 1.2rem;
     text-align: center;
+    color: var(--off-white);
 }
 
-main .form-group {
+/* Grupos de formulario */
+#upload-modal .form-group {
     margin-bottom: 16px;
 }
 
-main .form-group label {
+#upload-modal .form-group label {
     display: block;
     margin-bottom: 6px;
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
-main .form-group input, .form-group select {
+#upload-modal .form-group input,
+#upload-modal .form-group select {
     width: 100%;
     padding: 8px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
-    color: white;
+    color: var(--off-white);
     font-size: 0.9rem;
     box-sizing: border-box;
 }
 
-main .form-group input:focus, .form-group select:focus {
+#upload-modal .form-group input:focus,
+#upload-modal .form-group select:focus {
     outline: none;
-    border-color: #3b82f6;
+    border-color: var(--olive-green);
 }
 
-main .modal-actions {
+#upload-modal .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Botones del modal */
+#upload-modal .modal-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-top: 24px;
 }
 
-main .modal-actions button {
+#upload-modal .modal-actions button {
     padding: 8px 16px;
     font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-main .modal-actions button.primary {
-    background: #3b82f6;
+#upload-modal .modal-actions #btn-cancel-upload {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#upload-modal .modal-actions #btn-cancel-upload:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#upload-modal .modal-actions #btn-confirm-upload {
+    background: var(--olive-green);
     color: white;
 }
 
-main .modal-actions button.primary:hover {
-    background: #2563eb;
+#upload-modal .modal-actions #btn-confirm-upload:hover {
+    background: var(--olive-green);
 }
 
-/* Toast */
-main .toast {
-    position: absolute;
+/* Toast Notification - DENTRO del contenedor del juego */
+#toast {
+    position: absolute; /* ABSOLUTE dentro del game-container */
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #22c55e;
+    background: var(--olive-green);
     color: black;
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: bold;
     z-index: 300;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: slideUp 0.3s ease-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s;
+}
+
+/* Clase para ocultar el toast - IGUAL que en el primer juego */
+#toast.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Botón de subir beat */
+#btn-upload.control-btn {
+    background: var(--olive-green);
+    color: var(--off-white);
+}
+
+#btn-upload.control-btn:hover {
+    background: var(--asparagus);
+}
+
+/* IMPORTANTE: Asegurar que el game-container tenga position relative */
+#game-container {
+    position: relative; /* Necesario para que el absolute funcione dentro */
+}
+
+
+#upload-modal .form-group select option {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: var(--off-white); /* Texto blanco */
+    padding: 8px;
 }
 
 @keyframes slideUp {

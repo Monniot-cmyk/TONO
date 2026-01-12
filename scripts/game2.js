@@ -894,3 +894,80 @@ document.addEventListener('DOMContentLoaded', () => {
     const game = new MusicGame();
     console.log("Juego inicializado - versión final con play que continúa desde donde se paró");
 });
+
+
+
+
+
+
+
+// Añade esto en tu game2.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del modal - EXACTAMENTE como en el primer juego
+    const uploadBtn = document.getElementById('btn-upload');
+    const uploadModal = document.getElementById('upload-modal');
+    const cancelUploadBtn = document.getElementById('btn-cancel-upload');
+    const uploadForm = document.getElementById('upload-form');
+    const toast = document.getElementById('toast');
+    
+    // Abrir modal - EXACTAMENTE como en el primer juego
+    if (uploadBtn && uploadModal) {
+        uploadBtn.addEventListener('click', function() {
+            uploadModal.classList.remove('hidden');
+        });
+    }
+    
+    // Cerrar modal - EXACTAMENTE como en el primer juego
+    if (cancelUploadBtn && uploadModal) {
+        cancelUploadBtn.addEventListener('click', function() {
+            uploadModal.classList.add('hidden');
+        });
+    }
+    
+    // Cerrar al hacer clic fuera del contenido del modal
+    // Esto es lo que pides: que al hacer click fuera (en el fondo oscuro) se cierre
+    if (uploadModal) {
+        uploadModal.addEventListener('click', function(e) {
+            // Si haces click en el fondo oscuro (no en el contenido)
+            if (e.target === uploadModal) {
+                uploadModal.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Manejar formulario - EXACTAMENTE como en el primer juego
+    if (uploadForm && toast) {
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('beat-name').value;
+            const categoria = document.getElementById('beat-category').value;
+            
+            // Simular subida (aquí iría tu lógica real)
+            console.log('Subiendo beat del juego 2:', { 
+                nombre, 
+                categoria,
+                juego: 'game2'
+            });
+            
+            // Cerrar modal
+            uploadModal.classList.add('hidden');
+            
+            // Resetear formulario
+            uploadForm.reset();
+            
+            // Mostrar toast - EXACTAMENTE como en el primer juego
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        });
+    }
+    
+    // Cerrar modal con tecla ESC (opcional)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && uploadModal && !uploadModal.classList.contains('hidden')) {
+            uploadModal.classList.add('hidden');
+        }
+    });
+});

@@ -347,21 +347,26 @@ class MusicalTouchPad {
     }
     
     animate() {
-        // Fondo oscuro suave (puedes ajustarlo si quieres más neón aún)
-        const gradient = this.ctx.createRadialGradient(
-            this.canvas.width / 2, this.canvas.height / 2, 0,
-            this.canvas.width / 2, this.canvas.height / 2,
-            Math.max(this.canvas.width, this.canvas.height)
-        );
-        gradient.addColorStop(0, '#2e2b31');
-        this.ctx.fillStyle = gradient;
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
-        this.drawGridLines();
-        this.updateParticles();
-        this.drawParticles();
-        
-        requestAnimationFrame(() => this.animate());
+ const gradient = this.ctx.createRadialGradient(
+        this.canvas.width / 2,
+        this.canvas.height / 2,
+        0,
+        this.canvas.width / 2,
+        this.canvas.height / 2,
+        Math.max(this.canvas.width, this.canvas.height)
+    );
+
+    gradient.addColorStop(0, '#1a1822');
+    gradient.addColorStop(1, '#0e0d13');
+
+    this.ctx.fillStyle = gradient;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+    this.drawGridLines();
+    this.updateParticles();
+    this.drawParticles();
+
+    requestAnimationFrame(() => this.animate());
     }
 }
 
