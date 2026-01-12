@@ -24,21 +24,6 @@ main {
   height: 100%; 
 } 
 
-#modoTeatroBtn { 
-  padding: 10px 20px; 
-  margin-top: 20px; 
-  background-color: #007BFF; 
-  color: white; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 16px; 
-  position: fixed; 
-  bottom: 0; 
-} 
-
-#modoTeatroBtn:hover { 
-  background-color: #0056b3; 
-}
 
 /* MEDIA QUERY: Cuando el dispositivo es pequeño (móvil o pantalla muy reducida) */
 @media (max-width: 1290px) {
@@ -47,10 +32,6 @@ main {
     display: none !important;
   }
 
-  /* Ocultamos el botón de Modo Teatro */
-  #modoTeatroBtn {
-    display: none !important;
-  }
 
   /* Mostramos el mensaje de dispositivo pequeño */
   main::after {
@@ -73,7 +54,4 @@ main {
   }
 }
 
-#modoTeatroBtn:hover {
-    background-color: #0056b3;
-}
 

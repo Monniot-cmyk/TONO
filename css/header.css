@@ -92,7 +92,7 @@ body {
     font-size: 18px;
 }
 
- /* OPCIONES DELHEADER COMO TAL */
+ /* OPCIONES DEL HEADER COMO TAL */
 header{
     background-color: var(--gravel);
     display: flex;
