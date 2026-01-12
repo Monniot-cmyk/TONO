@@ -140,7 +140,7 @@ h1{
     font-size: 2em;
     margin: 0;
     margin-bottom: 0.7em;
-    padding-left: 0.8em;
+    padding-left: 0.3em;
 }
 
 header>section:nth-of-type(2) button{
@@ -158,10 +158,8 @@ header>section:nth-of-type(2) button{
 /* Animación para el botón :D */
 #btnMenu {
     margin: 0 auto;
-    width: 20px;
     transition: transform 0.3s ease;
     transform-origin: center;
-    padding-left: 0.7em;
 }
 
 header:has(nav.mostrar) #btnMenu {
@@ -283,6 +281,7 @@ body.user [data-estado="user"] {
 #opcionesCuenta {
     position: absolute;
     top: 105%;
+    right: 10px;
     background: var(--gravel);
     padding: 1em;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
