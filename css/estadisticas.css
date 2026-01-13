@@ -103,72 +103,139 @@ main {
   margin-top: 0.3rem;
 }
 
-/* Onda animada */
-.stats-card {
-  position: relative; 
-}
-
-/* Contenedor de barras */
-.wave-container {
+.sound-wave {
   display: flex;
-  align-items: flex-end;
-  gap: 4px;           
-  position: absolute;
-  right: 5rem;      /* más distancia del borde derecho */
-  top: 50%;
-  transform: translateY(-50%);
 }
 
+.sound-bar {
+  width: 3px;
+  height: 3px;
+  background-color: var(--finch);
+  margin-right: 2px;
+  transform: scaleY(1);
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* Variaciones por posición */
+.sound-bar:nth-child(4n) {
+  animation-name: bar-scale-xl;
+  animation-duration: 1s;
+}
+
+.sound-bar:nth-child(4) {
+  animation-duration: 1.15s;
+}
+
+.sound-bar:nth-child(3) {
+  animation-name: bar-scale-lg;
+  animation-duration: 0.8s;
+}
+
+.sound-bar:nth-child(6) {
+  animation-name: bar-scale-md;
+  animation-duration: 0.85s;
+}
+
+.sound-bar:nth-child(2),
+.sound-bar:nth-child(5),
+.sound-bar:nth-child(7),
+.sound-bar:nth-child(9) {
+  animation-name: bar-scale-sm;
+  animation-duration: 0.9s;
+}
+
+/* Animaciones */
+@keyframes bar-scale-sm {
+  0%, 50% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(6);
+  }
+  75% {
+    transform: scaleY(4);
+  }
+}
+
+@keyframes bar-scale-md {
+  0%, 50% {
+    transform: scaleY(2);
+  }
+  25% {
+    transform: scaleY(6);
+  }
+  75% {
+    transform: scaleY(5);
+  }
+}
+
+@keyframes bar-scale-lg {
+  0%, 50% {
+    transform: scaleY(8);
+  }
+  25% {
+    transform: scaleY(4);
+  }
+  75% {
+    transform: scaleY(6);
+  }
+}
+
+@keyframes bar-scale-xl {
+  0%, 50% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(7);
+  }
+  75% {
+    transform: scaleY(11);
+  }
+}
+
+.wrapper {
+  margin-left: auto;           
+  display: flex;
+  flex-direction: row-reverse;     
+  gap: 3rem;                  
+  padding: 0.5rem 1rem;
+}
+
+/* Onda */
+.sound-wave {
+  display: flex;
+  align-items: flex-end;   
+  height: 24px;
+}
+
+/* Botón */
 .wave-button-container {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #818858;
+  color: white;
+  cursor: pointer;
+
   display: flex;
   align-items: center;
-  gap: 1rem; /* espacio entre onda y botón */
-  position: absolute;
-  right: 15rem; 
-  top: 50%;
-  transform: translateY(-50%);
-}
+  justify-content: center;
 
-/* Cada barra de la onda */
-.wave {
-  width: 6px;          /* más ancho */
-  border-radius: 9999px;
-  background-color: var( --finch); /* verde brillante */
-  animation: wave 1s ease-in-out infinite;
-  animation-delay: var(--i);
-  transform-origin: bottom;
-}
+  text-shadow:
+    0 0 2px #eaf0c9,
+    0 0 12px #a6b54f;
 
-/* Animación de escala vertical */
-@keyframes wave {
-  0%, 100% {
-    transform: scaleY(0.3); /* altura mínima más grande */
-  }
-  50% {
-    transform: scaleY(1.5); /* altura máxima más grande */
-  }
-}
-
-/* BOTÓN */
-.wave-button-container {
-    width: 12%;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    background-color: #818858;
-    text-shadow:
-        0 0 2px #eaf0c9,
-        0 0 12px #a6b54f;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.1s ease, transform 0.2s ease;
+  transition: background-color 0.1s ease, transform 0.2s ease;
 }
 
 .wave-button-container:hover {
   box-shadow: 0 10px 20px rgba(171, 172, 140, 0.25);
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 
@@ -180,29 +247,33 @@ main {
       gap: 0.6rem;
   }
 
-  /* La tarjeta pasa a columna */
   .stats-card {
-      flex-direction: column;
-      align-items: flex-start; /* contenido a la izquierda */
-      gap: 0.6rem;
-  }
+  display: flex;
+  align-items: center; 
+  text-align: center;
+
+  flex-direction: row;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  margin: 0 auto; 
+  padding: 0.5rem;
+  background-color: red;
+
+}
 
   .stats-avatar img {
-      width: 40px;
-      height: 40px;
+      display: none;
   }
 
   .stats-content {
       width: 100%;
       text-align: left;
-  }
-
-  .wave {
-    display: none;
-  }
-
-  .wave-button-container {
-    width: 20%;
+  
   }
 
 }
@@ -213,26 +284,29 @@ main {
     .stats-feed {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
+  
     }
     .stats-card {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         text-align: center;
+         min-height: 150px;      
     }
     .stats-avatar img {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
     }
 
-    .wave-button-container {
-      position: static;     
-      flex-direction: column; 
-      align-items: center;
-      margin-top: 0.5rem;    
-      transform: none;       
-      gap: 0.5rem;          
-  }
+    .stats-content {
+      flex: 1;
+    }
 
+  .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 /* Pantallas grandes */
