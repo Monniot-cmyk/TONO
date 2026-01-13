@@ -14,10 +14,7 @@
     <header></header>
     <main>
         <div id="contenedorJuego">
-            <!-- Esto es el div que contiene el juego -->
-            <div id="juego">
-                <!-- Este div sería la raíz del juego, su base. Se puede sustituir por lo que sea cuando metamos un juego -->
-                
+            <!-- Esto es el div que contiene el juego -->                
                 <div id="game-container">
                     <div id="progress-bar"></div>
 
@@ -25,6 +22,7 @@
                         <button id="btn-play">PLAY</button>
                         <button id="btn-rec">REC LOOP</button>
                         <button id="btn-clear">BORRAR LOOP</button>
+                        <button class="upload-btn" onclick="pantallaCompleta()">FULLSCREEN</button>
                         <button id="btn-upload" class="upload-btn">SUBIR BEAT</button>
                     </div>
 
@@ -77,12 +75,7 @@
                     <div id="toast" class="toast hidden">Beat subido exitosamente!</div>
                 </div>
 
-            </div>
         </div>
-
-        <button id="modoTeatroBtn">Modo Teatro</button>
-        <!-- Botón para alterar las dimensiones del juego -->
-        <!-- Recomendable cambiarlo por la típica imagen de expandir -->
     </main>
 
     <footer></footer>
