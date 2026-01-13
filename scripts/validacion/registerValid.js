@@ -65,14 +65,39 @@ form.addEventListener("submit", (e) => {
     
     // Simular login automático tras el registro
     localStorage.setItem("userLogged", "true");
-    localStorage.setItem("userName", usuario); // 👈 nombre que se verá en el header
+    localStorage.setItem("userName", usuario); //  nombre que se verá en el header
 
     // Redirección al index
     window.location.href = "../../index.html";
 
     //Esto luego se quita, de momento es para comprobar que todo va bien
-    alert("Usuario registrado correctamente :D");
+    // alert("Usuario registrado correctamente :D");
 });
+
+//REBECA
+// Array de intereses
+const intereses = [];
+document.querySelectorAll("input[name='musica[]']:checked").forEach(chk => {
+    intereses.push(chk.value);
+});
+if (otrosCheckbox.checked && otrosTexto.value.trim() !== "") {
+    intereses.push(otrosTexto.value.trim());
+}
+
+const usuarioData = {
+    nombre: document.getElementById("nombre").value.trim(),
+    usuario: document.getElementById("usuario").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    intereses: intereses
+};
+
+// Guardar en localStorage
+localStorage.setItem("usuarioActivo", JSON.stringify(usuarioData));
+localStorage.setItem("userLogged", "true");
+
+// Redirige directo al perfil
+window.location.href = "../../html/profile/profile.html";
+
 
 //----------------------------------------
 // COMO SACAR LOS DATOS GUARDADOS EN JSON
