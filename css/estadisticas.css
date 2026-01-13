@@ -251,7 +251,7 @@ main {
   display: flex;
   align-items: center; 
   text-align: center;
-  background-color: #49464d;
+
   flex-direction: row;
 }
 
@@ -262,8 +262,8 @@ main {
   justify-content: center;
   margin: 0 auto; 
   padding: 0.5rem;
-  background-color: blue;
-  
+  background-color: red;
+
 }
 
   .stats-avatar img {
