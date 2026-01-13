@@ -518,7 +518,6 @@ main>section>p{
 
 /*DIFUMINAR*/
 .Marquee-tag:hover img {
-    filter: blur(5px) brightness(60%);
     transform: scale(1.3);
 }
 
