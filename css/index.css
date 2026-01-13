@@ -466,90 +466,90 @@ main>section>p{
 /*CARRUSEL*/
 
 .Marquee {
-  background-color: #FFFFFF61;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1em;
-  padding-bottom: 5rem;
-  font-weight: 200;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+    background-color: #FFFFFF61;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    padding-bottom: 5rem;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
 .Marquee-content {
-  display: flex;
-  animation: marquee 10s linear infinite running;
+    display: flex;
+    animation: marquee 10s linear infinite running;
 }
 
 .Marquee-content:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 .Marquee-tag {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 450px;
-  width: 350px;
-  margin: 0 0.9em;
-  padding: 0.5em;
-  background: rgba(255, 255, 255, 0.1);
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 350px;
+    margin: 0 0.9em;
+    padding: 0.5em;
+    background: rgba(255, 255, 255, 0.1);
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .Marquee-tag h3 {
-  color: #e6e6e6;
-  font-size: 30px;
-  margin: 0;
-  z-index: 2;
+    color: #e6e6e6;
+    font-size: 30px;
+    margin: 0;
+    z-index: 2;
 }
 
 .Marquee-tag img {
-  width: 100%;
-  transition: all 0.4s ease;
-  z-index: 1;
+    width: 100%;
+    transition: all 0.4s ease;
+    z-index: 1;
 }
 
 /*DIFUMINAR*/
 .Marquee-tag:hover img {
-  filter: blur(5px) brightness(60%);
-  transform: scale(1.3);
+    filter: blur(5px) brightness(60%);
+    transform: scale(1.3);
 }
 
 .Marquee-tag p {
-  color: #e6e6e6;
-  font-size: 30px;
-  z-index: 2;
+    color: #e6e6e6;
+    font-size: 30px;
+    z-index: 2;
 }
 
 .Marquee-tag:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /*OVERLAY*/
 .overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  opacity: 0;
-  text-align: center;
-  transition: opacity 0.4s ease;
-  z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.4s ease;
+    z-index: 3;
 }
 
 .Marquee-tag:hover .overlay-text {
-  opacity: 1;
+    opacity: 1;
 }
 
 /*MOVIMIENTO*/
@@ -565,15 +565,27 @@ main>section>p{
 /* OPINION CARD */
 
 main .review-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2em;
-  height: 100%;
-  width: 100%;
-  padding: 2.5em;
-  text-align: center;
-  z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    height: 100%;
+    width: 100%;
+    padding: 2.5em;
+    text-align: center;
+    z-index: 2;
+}
+
+main .valorations {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+main .valorations img {
+    width: 25px;
+    margin: 0 2px;
 }
 
 main .review-text {
@@ -582,6 +594,7 @@ main .review-text {
   font-weight: 300;
   line-height: 1.6;
   letter-spacing: 0.5px;
+  margin: 0;
 }
 
 main .review-author {
@@ -592,7 +605,7 @@ main .review-author {
 
 main .author-name {
   color: #49464d;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;

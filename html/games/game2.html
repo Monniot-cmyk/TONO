@@ -35,7 +35,7 @@
                             </button>
                             <!-- Botón Subir beat (NUEVO) -->
                             <button id="btn-upload" class="control-btn" title="Subir beat">
-                                <span class="icon">📤</span>
+                                <span class="icon">Subir Beat</span>
                             </button>
                         </div>
                         
@@ -155,31 +155,38 @@
                     </div>
 
                     <!-- INSTRUCCIONES -->
-                    <div id="instructions">
-                        Arrastra figuras a la partitura • Click derecho para borrar • La altura controla la nota
-                    </div>
+                    
 
                     <!-- MODAL PARA SUBIR BEAT (OCULTO INICIALMENTE) -->
-                    <div id="upload-modal" class="modal hidden">
+                    <div id="upload-modal" class="game2modal hidden">
                         <div class="modal-content">
-                            <h2>📤 Subir Beat</h2>
+                            <h2>SUBIR BEAT</h2>
                             <form id="upload-form">
                                 <div class="form-group">
-                                    <input type="text" id="beat-name" required placeholder="Nombre de tu beat">
+                                    <label for="beat-name">Nombre del beat</label>
+                                    <input type="text" id="beat-name" required placeholder="My Awesome Beat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="beat-category">Categoría</label>
+                                    <select id="beat-category" required>
+                                        <option value="ambient">Ambient</option>
+                                        <option value="electronic">Electronica</option>
+                                        <option value="cinematic">Rock</option>
+                                        <option value="experimental">Jazz</option>
+                                        <option value="other">Other</option>
+                                        <option value="other">Other</option>
+                                    </select>
                                 </div>
                                 <div class="modal-actions">
                                     <button type="button" id="btn-cancel-upload">Cancelar</button>
-                                    <button type="submit" id="btn-confirm-upload" class="primary">Subir Beat</button>
+                                    <button type="submit" id="btn-confirm-upload" class="primary">Subir</button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <!-- TOAST NOTIFICATION (OCULTO INICIALMENTE) -->
-                    <div id="toast" class="toast hidden">
-                        ¡Beat subido exitosamente!
-                    </div>
-                </div>
+                    <!-- Toast Notification -->
+                 
 
         </div>
 

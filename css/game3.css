@@ -1,3 +1,17 @@
+/* COLORES CSS HEX */
+:root{
+--off-white: #f8ffff;
+--pumice: #d2dad5;
+--santas-gray: #a4a3a8;
+--mountain-mist: #97969c;
+--jumbo: #7e7d87;
+--salt-box: #67616d;
+--deep: #0e0d13;
+--olive-green: #a6b54f;
+--asparagus: #858e54;
+--finch: #545841;
+}
+
 #game-container {
     position: relative;
     width: 100%;
@@ -54,4 +68,154 @@ main #gameCanvas {
     height: 100%;
     background: #2e2b31;
     cursor: crosshair;
+}
+
+#gameCanvas {
+    background: #0e0d13;
+}
+
+/* BOTÓN */
+#selectorEscalaContainer .upload-btn {
+    margin-left: 10px;
+    background: var(--olive-green);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#selectorEscalaContainer .upload-btn:hover {
+    background: #7f9746;
+}
+
+/* MODAL */
+#upload-modal.game3modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+#upload-modal.game3modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#upload-modal .modal-content {
+    background: #1a1a1a;
+    padding: 22px;
+    border-radius: 10px;
+    width: 280px;
+    color: #fff;
+}
+
+#upload-modal h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#upload-modal .form-group {
+    margin-bottom: 14px;
+}
+
+#upload-modal input,
+#upload-modal select {
+    width: 100%;
+    padding: 6px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+#upload-modal .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* TOAST */
+#toast {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--olive-green);
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 300;
+}
+
+#toast.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* BOTONES DEL MODAL */
+#upload-modal .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+#upload-modal .modal-actions button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#upload-modal .modal-actions #btn-cancel-upload {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#upload-modal .modal-actions #btn-cancel-upload:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#upload-modal .modal-actions #btn-confirm-upload {
+    background: var(--olive-green);
+    color: white;
+}
+
+#upload-modal .modal-actions #btn-confirm-upload:hover {
+    background: var(--olive-green);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-actions button[type="button"] {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.modal-actions button.primary {
+    background: var(--olive-green);
+    color: var(--off-white);
 }
