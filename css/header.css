@@ -92,7 +92,7 @@ body {
     font-size: 18px;
 }
 
- /* OPCIONES DELHEADER COMO TAL */
+ /* OPCIONES DEL HEADER COMO TAL */
 header{
     background-color: var(--gravel);
     display: flex;
@@ -285,7 +285,7 @@ body.user [data-estado="user"] {
 #opcionesCuenta {
     position: absolute;
     top: 105%;
-    right: 10px;
+    right: 15px;
     background: var(--gravel);
     padding: 1em;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
