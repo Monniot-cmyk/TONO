@@ -98,6 +98,42 @@ main>section>p{
 }
 
 
+
+.CSSgal .slide-2{
+    background-image: url(/img/capturas/shapes.png);
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.CSSgal .slide-2::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.CSSgal .slide-2 > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+.CSSgal .slide-2 h2,
+.CSSgal .slide-2 p,
+.CSSgal .slide-2 a{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
 .CSSgal .slide-3{
     background-image: url(/img/capturas/chords.png);
     text-align: center;

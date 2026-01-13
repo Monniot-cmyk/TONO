@@ -257,7 +257,11 @@ nav>ul{
 nav>ul>li>a{
     text-decoration: none;
     color: #f8ffff;
-    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
 }
 
 nav>ul>li>a:hover {
