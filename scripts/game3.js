@@ -373,3 +373,38 @@ class MusicalTouchPad {
 document.addEventListener('DOMContentLoaded', () => {
     new MusicalTouchPad();
 });
+
+/* BOTON DE SUBIDA DE BEAT */
+// --- SUBIR BEAT (mock) ---
+const btnSubir = document.getElementById('btn-upload');
+const modalSubida = document.querySelector('.game3modal');
+const formularioSubida = document.getElementById('upload-form');
+const btnCancelarSubida = document.getElementById('btn-cancel-upload');
+const toast = document.getElementById('toast');
+
+btnSubir.addEventListener('click', () => {
+    modalSubida.classList.remove('hidden');
+});
+
+btnCancelarSubida.addEventListener('click', () => {
+    modalSubida.classList.add('hidden');
+});
+
+formularioSubida.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById('beat-name').value;
+    const categoria = document.getElementById('beat-category').value;
+
+    console.log('Subiendo beat (Chord):', {
+        nombre,
+        categoria,
+        escala: document.getElementById('selectorEscala').value
+    });
+
+    modalSubida.classList.add('hidden');
+    formularioSubida.reset();
+
+    toast.classList.remove('hidden');
+    setTimeout(() => toast.classList.add('hidden'), 3000);
+});

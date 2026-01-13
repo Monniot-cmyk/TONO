@@ -28,7 +28,40 @@
                             <option value="eolico">Eólico</option>
                             <option value="locrio">Locrio</option>
                         </select>
+
+                        <button id="btn-upload" class="upload-btn">SUBIR BEAT</button>
                     </div>
+                    
+                    <!-- Upload Modal -->
+                    <div id="upload-modal" class="game3modal hidden">
+                        <div class="modal-content">
+                            <h2>SUBIR BEAT</h2>
+                            <form id="upload-form">
+                                <div class="form-group">
+                                    <label for="beat-name">Nombre del beat</label>
+                                    <input type="text" id="beat-name" required placeholder="My Awesome Beat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="beat-category">Categoría</label>
+                                    <select id="beat-category" required>
+                                        <option value="ambient">Ambient</option>
+                                        <option value="electronic">Electronica</option>
+                                        <option value="cinematic">Rock</option>
+                                        <option value="experimental">Jazz</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="modal-actions">
+                                    <button type="button" id="btn-cancel-upload">Cancelar</button>
+                                    <button type="submit" class="primary">Subir</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Toast -->
+                    <div id="toast" class="hidden">Beat subido exitosamente!</div>
+
                     <canvas id="gameCanvas"></canvas>
                 </div>
             </div>
