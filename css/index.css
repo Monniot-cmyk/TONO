@@ -1,19 +1,617 @@
+/* COLORES CSS HEX */
 :root{
-/* CSS HEX */
-/* Esta vaina lo que hace es que pueda escribir luego el nombre del color sin tener que andar copiando y pegando
-todo el rato el codigo hexadecimal */
---aths-special: #ede5cc;
---coral-reef: #c8c0a9;
---yellow-metal: #74613a;
---armadillo: #37362e;
---deco: #dadc89;
---celery: #bac851;
---dingley: #657348;
---ecru-white: #f2f1de;
---golden-grass: #dc932f;
+--off-white: #f8ffff;
+--pumice: #d2dad5;
+--santas-gray: #a4a3a8;
+--mountain-mist: #97969c;
+--jumbo: #7e7d87;
+--salt-box: #67616d;
+--gravel: #49464d;
+--deep: #2e2b31;
+--olive-green: #a6b54f;
+--asparagus: #858e54;
+--finch: #545841;
 }
 
-main {
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+
+main>section:not(:first-of-type):not(.olas){
+    /* border: solid fuchsia; */
+    width: 90%;
+    max-width: 90em;
+    margin: 3em 0;
+    text-align: center;
+}
+
+main>section>p{
+    color: var(--deep);
+}
+
+
+/* El slideshow viene de: [https://codepen.io/rokobuljan/pen/XXzqKQ](https://codepen.io/rokobuljan/pen/XXzqKQ) */
+/* CAMBIO: width y height ahora son responsive */
+.CSSgal {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background-color: var(--deep);
+    margin: 0 auto;
+}
+
+
+/* SLIDER */
+.CSSgal .slider {
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    transition: 0.8s;
+}
+
+
+/* SLIDES */
+.CSSgal .slider > * {
+    font-size: 1rem;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    background: none 50% no-repeat;
+    background-size: cover;
+}
+
+
+.CSSgal .slide-1{
+    background-image: url(/img/capturas/spark.png);
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.CSSgal .slide-1::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.CSSgal .slide-1 > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+.CSSgal .slide-1 h2,
+.CSSgal .slide-1 p,
+.CSSgal .slide-1 a{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+
+.CSSgal .slide-3{
+    background-image: url(/img/capturas/chords.png);
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.CSSgal .slide-3::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.CSSgal .slide-3 > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+.CSSgal .slide-3 h2,
+.CSSgal .slide-3 p,
+.CSSgal .slide-3 a{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+.CSSgal .prevNext {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+
+
+.CSSgal .prevNext > div+div {
+    visibility: hidden; /* Hide all but first P/N container */
+}
+
+
+.CSSgal .prevNext a {
+    background: #fff;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    opacity: 0.7;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.CSSgal .prevNext a:hover {
+    opacity: 1;
+}
+
+.CSSgal .prevNext a+a {
+    left: auto;
+    right: 0;
+}
+
+
+/* NAVIGATION */
+.CSSgal .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.CSSgal .bullets > a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.CSSgal .bullets > a+a {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.CSSgal .bullets > a:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+
+/* SLIDER ANIMATION POSITIONS */
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+
+/* ESTILOS PERSONALIZADOS */
+.CSSgal{
+    color: #fff;    
+    text-align: center;
+}
+
+.CSSgal .slider h2 {
+    margin-top: 20%;
+    font-weight: 200;
+    letter-spacing: -0.06em;
+    word-spacing: 0.2em;
+    font-size: clamp(1.5em, 5vw, 3em);
+}
+
+.CSSgal .slider p {
+    font-size: clamp(0.9em, 3vw, 1.2em);
+    padding: 0 2em;
+}
+
+.CSSgal a {
+    border-radius: 50%;
+    margin: 0 3px;
+    color: var(--olive-green);
+    text-decoration: none;
+}
+/* Fix para las flechas en la carga del index */
+.CSSgal .slide-1::before,
+.CSSgal .slide-3::before {
+    pointer-events: none;
+}
+
+.CSSgal .prevNext {
+    z-index: 10;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+/*  PARALLAX DE ESTRELLAS */
+.stars-section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #232025 0%, var(--gravel) 90%);
+}
+
+
+/*  ESTRELLAS PEQUEÑAS  */
+#stars {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow:
+        12px 34px #FFF, 56px 890px #FFF, 123px 456px #FFF, 234px 1789px #FFF,
+        345px 678px #FFF, 456px 1234px #FFF, 567px 345px #FFF, 678px 1890px #FFF,
+        789px 456px #FFF, 890px 123px #FFF, 901px 1789px #FFF, 1023px 654px #FFF,
+        1123px 987px #FFF, 1234px 321px #FFF, 1345px 1500px #FFF,
+        1456px 789px #FFF, 1567px 456px #FFF, 1678px 1345px #FFF,
+        1789px 234px #FFF, 1890px 1678px #FFF,
+        200px 1800px #FFF, 400px 1600px #FFF, 600px 1400px #FFF,
+        800px 1200px #FFF, 1000px 1000px #FFF, 1200px 800px #FFF,
+        1400px 600px #FFF, 1600px 400px #FFF, 1800px 200px #FFF;
+    animation: animStar 50s linear infinite;
+    opacity: 0.6;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  ESTRELLAS MEDIANAS  */
+#stars2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow:
+        150px 600px #FFF, 350px 1400px #FFF, 550px 300px #FFF,
+        750px 1100px #FFF, 950px 1700px #FFF, 1150px 500px #FFF,
+        1350px 900px #FFF, 1550px 1300px #FFF, 1750px 200px #FFF,
+        300px 1600px #FFF, 600px 900px #FFF, 900px 1400px #FFF;
+    animation: animStar 100s linear infinite;
+    opacity: 0.4;
+}
+
+#stars2::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  ESTRELLAS GRANDES  */
+#stars3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow:
+        300px 700px #FFF,
+        700px 1300px #FFF,
+        1100px 400px #FFF,
+        1500px 900px #FFF,
+        1800px 1500px #FFF,
+        500px 300px #FFF;
+    animation: animStar 150s linear infinite;
+    opacity: 0.8;
+}
+
+#stars3::after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: inherit;
+}
+
+
+/*  TEXTO CENTRAL  */
+#title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 10px;
+    z-index: 10;
+    padding-left: 10px;
+}
+
+/*  Animacion para las estrellas*/
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+
+
+/* El efecto viene de https://codepen.io/ninjajutsu/pen/vaRomK */
+.olas{
+    width: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.olas, .olas *{
+    width: 100%;
+    background-color: transparent;
+}
+
+.olasTexto{
+    position: relative;
+    z-index: 5;
+    margin-bottom: 7rem;
+    margin-top: 0px;
+    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    color: var(--off-white);
+    letter-spacing: 0.2em;
+    font-size: clamp(1.2em, 3vw, 1.8em);
+    text-shadow:
+        0 0 4px rgba(248,255,255,0.4),
+        0 0 10px rgba(166,181,79,0.25);
+    text-align: center;
+}
+
+.ocean{
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 6400px;
+    height: 200px;
+
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200'%3E%3Cpath fill='%23ffffff' fill-opacity='0.25' d='M0,80 C150,20 350,140 600,80 850,20 1050,140 1200,80 L1200,200 L0,200 Z'/%3E%3C/svg%3E") repeat-x;
+
+    animation: waveMove 18s linear infinite;
+    pointer-events: none;
+}
+
+.wave:nth-of-type(2){
+    bottom: -20px;
+    opacity: 0.7;
+    animation: waveMove 26s linear infinite, waveFloat 9s ease-in-out infinite;
+}
+
+@keyframes waveMove{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-1600px); }
+}
+
+@keyframes waveFloat{
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-10px); }
+}
+
+
+
+
+
+/*CARRUSEL*/
+
+.Marquee {
+    background-color: #FFFFFF61;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    padding-bottom: 5rem;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Marquee-content {
+    display: flex;
+    animation: marquee 10s linear infinite running;
+}
+
+.Marquee-content:hover {
+    animation-play-state: paused;
+}
+
+.Marquee-tag {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 350px;
+    margin: 0 0.9em;
+    padding: 0.5em;
+    background: rgba(255, 255, 255, 0.1);
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.Marquee-tag h3 {
+    color: #e6e6e6;
+    font-size: 30px;
+    margin: 0;
+    z-index: 2;
+}
+
+.Marquee-tag img {
+    width: 100%;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/*DIFUMINAR*/
+.Marquee-tag:hover img {
+    filter: blur(5px) brightness(60%);
+    transform: scale(1.3);
+}
+
+.Marquee-tag p {
+    color: #e6e6e6;
+    font-size: 30px;
+    z-index: 2;
+}
+
+.Marquee-tag:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/*OVERLAY*/
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+}
+
+.Marquee-tag:hover .overlay-text {
+    opacity: 1;
+}
+
+/*MOVIMIENTO*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* OPINION CARD */
+
+main .review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    height: 100%;
+    width: 100%;
+    padding: 2.5em;
+    text-align: center;
+    z-index: 2;
+}
+
+main .valorations {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+main .valorations img {
+    width: 25px;
+    margin: 0 2px;
+}
+
+main .review-text {
+  color: var(--off-white);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+main .review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+main .author-name {
+  color: #49464d;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main .author-image {
+    width: 10%;
+    margin: 0 auto;
+}

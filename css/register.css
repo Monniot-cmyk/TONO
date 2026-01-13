@@ -1,6 +1,3 @@
-/* He puesto los colores de la paleta, si creeis que puede estar bonito con otra combinacion ponerla, 
-los colores de ahora son de prueba */
-/* Falta añadir la tipografía, cambiar los colores, poner los apartados kebab del header */
 /* MAIN */
 
 /* COLORES CSS HEX */
@@ -16,12 +13,15 @@ los colores de ahora son de prueba */
 --finch: #545841;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 main {
     display: flex;
     justify-content: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
 }
-
 
 /* CONTENEDOR */
 main section {
@@ -43,26 +43,12 @@ main h2 {
     margin-bottom: 1.5em;
 }
 
-/* FORM 2 COLUMNAS */
-main form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
 /* FIELDSETS */
 main fieldset {
     width: 100%;
     min-width: 0;
     border: 1px solid var(--finch);
     padding: 1.5rem;
-
-}
-
-/* FIELDSETS QUE OCUPAN TODO */
-main fieldset:nth-of-type(3),
-main #btnRegistro {
-    grid-column: 1 / -1;
 }
 
 /*  LEGEND */
@@ -105,15 +91,6 @@ main input:focus {
     color: #f8ffff;
 }
 
-/* INTERESES (GRID INTERNO) */
-main fieldset fieldset {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem 1.2rem;
-    margin-top: 1.2rem;
-
-}
-
 /* CHECKBOXES */
 main fieldset fieldset label {
     display: flex;
@@ -128,7 +105,6 @@ main input[type="checkbox"] {
 
 /* OTROS INPUT */
 main .otros-input {
-    grid-column: 1 / -1;
     margin-top: 0.8rem;
 }
 
@@ -169,10 +145,55 @@ main #btnRegistro:active {
 }
 
 
+/* GRID DEL FORMULARIO. feat Sergio */
+/* Esto ha sido más complicado de lo que debería*/
+
+main form div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cada fieldset ocupa una celda completa de la grid */
+main form div > fieldset {
+  box-sizing: border-box;
+}
+
+/* El tercer fieldset (Intereses) debe ocupar el ancho completo */
+main form div > fieldset:nth-of-type(3) {
+  grid-column: 1 / -1;
+}
+
+/* El fieldset Intereses es trans (se transforma en grid) */
+main form div > fieldset:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Dentro de Intereses, cada fieldset hijo es un ítem de la grid */
+main form div > fieldset:nth-of-type(3) > fieldset {
+  box-sizing: border-box;
+}
+
+/* El último fieldset (Otros) ocupa todo el ancho debajo */
+main form div> fieldset:nth-of-type(3) > fieldset:last-of-type {
+  grid-column: 1 / -1;
+}
+
+/* Pum, responsive */
+@media (max-width: 768px) {
+  main form div {
+    grid-template-columns: 1fr;
+  }
+
+  main form div > fieldset:nth-of-type(3) {
+    grid-template-columns: 1fr;
+  }
+}
 
 
-
-/* Efecto parallax para el fondo del formulario, el orginnal es de https://codepen.io/vo0vka/pen/zYrWdwb
+/* Efecto parallax para el fondo del formulario, el original es de https://codepen.io/vo0vka/pen/zYrWdwb
 lo he adaptado a este contenedor */
 main section {
     position: relative;
@@ -245,16 +266,175 @@ main section > *:not(.mountains-bg) {
     }
 }
 
+/* RESPONSIVE
+Para moviles */
+@media (max-width: 480px) {
+    main {
+        padding: 2rem 1rem;
+    }
 
+    main section {
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
 
+    main h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 
+    main fieldset {
+        padding: 1rem;
+    }
 
+    main legend {
+        font-size: 0.9rem;
+    }
 
+    main label {
+        font-size: 0.9rem;
+    }
 
+    main input[type="text"],
+    main input[type="email"],
+    main input[type="password"] {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
 
-/*  RESPONSIVE 1 COLUMNA, PARA MOVILES */
-@media (max-width: 768px) {
-    main form {
+    main .otros-input input {
+        font-size: 0.9rem;
+    }
+
+    main #btnRegistro {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    main form div {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    main form div > fieldset:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fondo parallax */
+    .mountains-bg {
+        height: 200px;
+    }
+
+    .mountain--back {
+        height: 250px;
+        opacity: 0.2;
+    }
+
+    .mountain--mid {
+        height: 300px;
+        opacity: 0.4;
+    }
+
+    .mountain--front {
+        height: 250px;
+        opacity: 0.6;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+    main {
+        padding: 3rem 1.5rem;
+    }
+
+    main section {
+        padding: 2rem;
+        border-radius: 14px;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    main fieldset {
+        padding: 1.2rem;
+    }
+
+    main legend {
+        font-size: 1rem;
+    }
+
+    main label {
+        font-size: 1rem;
+    }
+
+    main input[type="text"],
+    main input[type="email"],
+    main input[type="password"] {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    main #btnRegistro {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1.05rem;
+    }
+
+    main form div {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    main form div > fieldset:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fondo parallax */
+    .mountains-bg {
+        height: 250px;
+    }
+
+    .mountain--back {
+        height: 350px;
+        opacity: 0.25;
+    }
+
+    .mountain--mid {
+        height: 400px;
+        opacity: 0.45;
+    }
+
+    .mountain--front {
+        height: 350px;
+        opacity: 0.65;
+    }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
+    main {
+        padding: 4rem 2rem;
+    }
+
+    main section {
+        max-width: 1000px;
+        padding: 2.5rem;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    main #btnRegistro {
+        width: 15em;
+        padding: 1rem;
+    }
+
+    .mountains-bg {
+        height: 320px;
     }
 }

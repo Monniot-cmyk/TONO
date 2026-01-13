@@ -16,18 +16,207 @@
     <header></header>
 
     <main>
+        <section class="stars-section">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+
+            <div id="title">
+                <p>Interactua con el sonido</p>
+            </div>
+        </section>
  
         <!-- Esto esta full por hacer por que hay que ver el estilo final que le damos dependidendo de lso juegos que hagamos
          diria de dejarlo para hacerlo lo ultimo una vez tengamos mas situada la estetica de la pagina. Lo que si tiene que 
          tener son los enlaces a los juegos-->
 
-         <div id="juegos">
-            <a href="/html/games/game1.html">Juego 1</a>
-            <a href="/html/games/game2.html">Juego 2</a>
-            <a href="/html/games/game3.html">Juego 3</a>
-         </div>
+        <section>
+            <p>
+                Esta web presenta una colección de mini-juegos audiovisuales interactivos desarrollados como un ejercicio de experimentación digital. A través de la combinación de sonido, imagen y movimiento, cada pieza plantea una experiencia única basada en la interacción del usuario.
+                Lejos de plantearse como juegos competitivos, estas piezas se centran en la experimentación y la percepción. El objetivo no es superar niveles, sino interactuar, observar y descubrir cómo pequeños gestos generan respuestas visuales y auditivas.
+            </p>
+            <p>
+                Accede a cada mini-juego y explora la experiencia a tu propio ritmo.
+            </p>
+        </section>
 
-          <div class="noise"></div>
+        <section class="CSSgal">
+            <!-- Slides -->
+            <s id="s1"></s>
+            <s id="s2"></s>
+            <s id="s3"></s>
+            <!-- Solo 3 slides, no más -->
+            
+            <div class="slider">
+                <!-- Slide 1 -->
+                <div class="slide-1">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Spark</h2>
+                        <p class="slide-text">Crea musica con un teclado interactivo y disfruta de los colores en la pantalla</p>
+                        <a href="html/games/game1.html" class="custom-btn">Jugar →</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide-2">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Aventura Extrema</h2>
+                        <p class="slide-text">Supera tus límites con nuestras experiencias de aventura diseñadas para los más audaces.</p>
+                        <a href="html/games/game2.html" class="custom-btn">Jugar →</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide-3">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Chords</h2>
+                        <p class="slide-text">Desliza el ratón para crear armonías</p>
+                        <a href="html/games/game3.html" class="custom-btn">Jugar →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles de navegación -->
+            <div class="prevNext">
+                <div><a href="#s3">‹</a><a href="#s2">›</a></div>
+                <div><a href="#s1">‹</a><a href="#s3">›</a></div>
+                <div><a href="#s2">‹</a><a href="#s1">›</a></div>
+            </div>
+            
+            <!-- Puntos de navegación (3 puntos) -->
+            <div class="bullets">
+                <a href="#s1">1</a>
+                <a href="#s2">2</a>
+                <a href="#s3">3</a>
+                <!-- Solo 3 puntos, no más -->
+            </div>
+        </section>
+
+        <section class="olas">
+            <p class="olasTexto">Ponte los auriculares y prueba</p>
+            <div class="ocean">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+
+            <div class="Marquee">
+                <div class="Marquee-content">
+                    <div> <!--Este div es necesario porque cada Marquee-tag necesita su propio contenedor para expandirse -->
+                        <div class="Marquee-tag">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">“Una experiencia sensorial única y exquisita. Muy recomendado”</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">Dixon Mayas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="Marquee-tag">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/halfStar.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">“Fluidez y sonoridad en su máximo explendor”</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">Hugh Janus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="Marquee-tag">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">"Como picha en culo fa fa. Asopla ahi"</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">El patica</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Duplicados para el bucle -->
+                    <div>
+                        <div class="Marquee-tag" aria-hidden="true">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">“Una experiencia sensorial única y exquisita. Muy recomendado”</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">Dixon Mayas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="Marquee-tag" aria-hidden="true">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/halfStar.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">“Fluidez y sonoridad en su máximo explendor”</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">Hugh Janus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="Marquee-tag" aria-hidden="true">
+                            <div class="review-card">
+                                <div class="valorations">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                    <img src="img/star.svg" alt="estrellas">
+                                </div>
+                                <p class="review-text">“Como picha en culo fa fa. Asopla ahi”</p>
+                                <div class="review-author">
+                                    <img class="author-image" src="img/icon.png" alt="usuario">
+                                    <span class="author-name">El patica</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
     </main>
 
     <!-- PASADO A NODOS -->
