@@ -84,7 +84,7 @@ body {
 
  /* OPCIONES DEL HEADER COMO TAL */
 header {
-    background: radial-gradient(ellipse at top, #232025 10%, var(--gravel) 90%);
+    background: linear-gradient(to right, var(--gravel) 0%, #413e44 50%, var(--gravel) 100%);
     display: flex;
     padding: 1em 3em;
     justify-content: space-between;
@@ -149,6 +149,7 @@ header>section:nth-of-type(2) button{
     margin: 0 auto;
     transition: transform 0.3s ease;
     transform-origin: center;
+    background-color: transparent;
 }
 
 header:has(nav.mostrar) #btnMenu {

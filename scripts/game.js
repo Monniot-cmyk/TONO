@@ -6,9 +6,11 @@ function pantallaCompleta() {
     if (document.fullscreenElement) {
         document.exitFullscreen();
     } else {
-        teatroActivo = false;
-        // cambiarFooter.style.display = "flex";
-        contenedorJuego.style.width = document.body.offsetWidth*0.66 +"px";
-        contenedorJuego.style.height = document.body.offsetHeight*0.66 +"px";
+        contenedor.requestFullscreen();
     }
+}
+
+// Al final he tenido que añadir un event listener porque se rompia al usar la tecla ESC
+document.addEventListener("fullscreenchange", () => {
+    isFS = !!document.fullscreenElement;
 });
