@@ -84,7 +84,7 @@ body {
 
  /* OPCIONES DEL HEADER COMO TAL */
 header {
-    background: linear-gradient(to right, var(--gravel) 0%, #413e44 50%, var(--gravel) 100%);
+    background: linear-gradient(to right, var(--gravel) 12%, #413e44 38%, #413e44 61%, var(--gravel) 88%);
     display: flex;
     padding: 1em 3em;
     justify-content: space-between;
