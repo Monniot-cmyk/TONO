@@ -145,40 +145,52 @@ main #btnRegistro:active {
 }
 
 
-/* GRID DEL FORMULARIO. feat Sergio */
-/* Esto ha sido más complicado de lo que debería*/
-
-main form div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+/* Vale aquí antes iba el GRID pero lo he quitado para usar Bootstrap porque lo dijo ruben */
+/* Eso era información totalmente irrelevante pero el GRID me costó mucho de hacer para borrarlo
+   así como así*/
+/* Este codigo es solo para que datos personales y datos del registro sean igual de altos */
+main .row > .col-md-6 > fieldset {
+    height: 100%;
 }
 
-/* Cada fieldset ocupa una celda completa de la grid */
-main form div > fieldset {
-  box-sizing: border-box;
+main legend {
+    color: var(--gravel);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
-/* El tercer fieldset (Intereses) debe ocupar el ancho completo */
-main form div > fieldset:nth-of-type(3) {
-  grid-column: 1 / -1;
+/* MIRAD QUE BONITOS HAN QUEDADO LOS CHECKBOX */
+main input[type="checkbox"] {
+    appearance: none;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    border: 2px solid var(--finch);
+    background-color: transparent;
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
-/* El fieldset Intereses es trans (se transforma en grid) */
-main form div > fieldset:nth-of-type(3) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+/* Checks marcados sisi */
+main input[type="checkbox"]:checked {
+    background-color: var(--finch);
+    border-color: var(--finch);
 }
 
-/* Dentro de Intereses, cada fieldset hijo es un ítem de la grid */
-main form div > fieldset:nth-of-type(3) > fieldset {
-  box-sizing: border-box;
-}
-
-/* El último fieldset (Otros) ocupa todo el ancho debajo */
-main form div> fieldset:nth-of-type(3) > fieldset:last-of-type {
-  grid-column: 1 / -1;
+/* Hay que meter manualmente el click ¿Es un coñazo en el codigo? Si. Pero y lo bien que queda? */
+main input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #f8ffff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
 }
 
 /* Pum, responsive */
