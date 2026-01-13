@@ -901,7 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Añade esto en tu game2.js
+//  Simulacion de la subida modal
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos del modal - EXACTAMENTE como en el primer juego
     const uploadBtn = document.getElementById('btn-upload');
@@ -910,14 +910,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const uploadForm = document.getElementById('upload-form');
     const toast = document.getElementById('toast');
     
-    // Abrir modal - EXACTAMENTE como en el primer juego
     if (uploadBtn && uploadModal) {
         uploadBtn.addEventListener('click', function() {
             uploadModal.classList.remove('hidden');
         });
     }
     
-    // Cerrar modal - EXACTAMENTE como en el primer juego
     if (cancelUploadBtn && uploadModal) {
         cancelUploadBtn.addEventListener('click', function() {
             uploadModal.classList.add('hidden');
@@ -926,14 +924,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cerrar al hacer clic fuera del contenido del modal
     // Esto es lo que pides: que al hacer click fuera (en el fondo oscuro) se cierre
-    if (uploadModal) {
-        uploadModal.addEventListener('click', function(e) {
-            // Si haces click en el fondo oscuro (no en el contenido)
-            if (e.target === uploadModal) {
-                uploadModal.classList.add('hidden');
-            }
-        });
-    }
+    // if (uploadModal) {
+    //     uploadModal.addEventListener('click', function(e) {
+    //         // Si haces click en el fondo oscuro (no en el contenido)
+    //         if (e.target === uploadModal) {
+    //             uploadModal.classList.add('hidden');
+    //         }
+    //     });
+    // }
     
     // Manejar formulario - EXACTAMENTE como en el primer juego
     if (uploadForm && toast) {

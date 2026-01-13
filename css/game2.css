@@ -45,23 +45,31 @@
 }
 
 .control-btn {
-    font-family: 'Century Gothic', sans-serif;
-    padding: 0 0.5em;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
-    color: #fff;
+    background: #d9ff001c;
+    border: none;
+    color: var(--off-white);
+    padding: 8px 16px;
+    border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    font-size: 18px;
+    gap: 6px;
+    font-size: 0.9rem;
 }
 
 .control-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(1px);
+    background: #858e54;
+}
+
+#btn-upload{
+    background: var(--olive-green);
+    color: white;
+}
+
+#btn-upload:hover{
+    background: #83b44a;
 }
 
 #speed-control {
@@ -877,46 +885,48 @@
 
 /* Toast Notification - DENTRO del contenedor del juego */
 #toast {
-    position: absolute; /* ABSOLUTE dentro del game-container */
+    position: absolute; /* DENTRO del game-container */
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--olive-green);
     color: black;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 20px;
     font-weight: bold;
     z-index: 300;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    min-width: 200px;
 }
 
-/* Clase para ocultar el toast - IGUAL que en el primer juego */
+/* Animación de entrada - IGUAL que en el primer juego */
+@keyframes slideUp {
+    from { 
+        transform: translate(-50%, 100%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translate(-50%, 0); 
+        opacity: 1; 
+    }
+}
+
+/* Cuando NO tiene la clase hidden */
+#toast:not(.hidden) {
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Clase hidden - OCULTA el toast */
 #toast.hidden {
     opacity: 0 !important;
     pointer-events: none !important;
 }
 
-/* Botón de subir beat */
-#btn-upload.control-btn {
-    background: var(--olive-green);
-    color: var(--off-white);
-}
-
-#btn-upload.control-btn:hover {
-    background: var(--asparagus);
-}
-
 /* IMPORTANTE: Asegurar que el game-container tenga position relative */
 #game-container {
-    position: relative; /* Necesario para que el absolute funcione dentro */
-}
-
-
-#upload-modal .form-group select option {
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: var(--off-white); /* Texto blanco */
-    padding: 8px;
+    position: relative;
 }

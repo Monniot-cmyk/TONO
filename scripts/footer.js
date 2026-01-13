@@ -62,9 +62,9 @@ const ulContenidos = document.createElement("ul");
 
 const enlacesContenido = [
   { texto: "Registrarse", href: "/html/profile/register.html" },
-  { texto: "Juego 1", href: "/html/games/game1.html" },
-  { texto: "Juego 2", href: "/html/games/game2.html" },
-  { texto: "Juego 3", href: "/html/games/game3.html" },
+  { texto: "Spark", href: "/html/games/game1.html" },
+  { texto: "Shapes", href: "/html/games/game2.html" },
+  { texto: "Chords", href: "/html/games/game3.html" },
   { texto: "Resultados", href: "/html/stats/stats.html" }
 ];
 

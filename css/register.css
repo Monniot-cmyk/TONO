@@ -2,20 +2,22 @@
 
 /* COLORES CSS HEX */
 :root{
---pumice: #d2dad5;
---santas-gray: #a4a3a8;
---mountain-mist: #97969c;
---jumbo: #7e7d87;
---salt-box: #67616d;
---gravel: #49464d;
---olive-green: #9fa76b;
---asparagus: #a7ad7e;
---finch: #545841;
+    --pumice: #d2dad5;
+    --santas-gray: #a4a3a8;
+    --mountain-mist: #97969c;
+    --jumbo: #7e7d87;
+    --salt-box: #67616d;
+    --gravel: #49464d;
+    --olive-green: #a6b54f;
+    --asparagus: #858e54;
+    --finch: #545841;
+    --off-white: #f8ffff;
+    --deep: #2e2b31;
 }
 
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 
 main {
     display: flex;
@@ -25,13 +27,16 @@ main {
 
 /* CONTENEDOR */
 main section {
-    background-color: var(--olive-green);
+    background-color: #9fa76b;
     padding: 2.5rem;
     border-radius: 16px;
     max-width: 1000px;
     width: 100%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+
+/* ESTO VA AQUI PORQUE BOOTSTRAP ESTÁ TOQUETEANDO COSAS DEL HEADER */
+
 
 /* TÍTULO */
 main h2 {
@@ -47,7 +52,7 @@ main h2 {
 main fieldset {
     width: 100%;
     min-width: 0;
-    border: 1px solid var(--finch);
+    border: 1px solid #545841;
     padding: 1.5rem;
 }
 
@@ -55,7 +60,7 @@ main fieldset {
 main legend {
     padding: 0 0.5rem;
     font-weight: 600;
-    color: var(--gravel);
+    color: #49464d;
     text-shadow:
     0 0 2px #eaf0c9,
     0 0 12px #a6b54f;
@@ -86,7 +91,7 @@ main input[type="password"] {
 
 main input:focus {
     outline: none;
-    border: 2px solid var(--gravel);
+    border: 2px solid #49464d;
     background-color: #adb47e;
     color: #f8ffff;
 }
@@ -100,7 +105,7 @@ main fieldset fieldset label {
 
 /* CHECKBOX COLOR */
 main input[type="checkbox"] {
-    accent-color: var(--finch);
+    accent-color: #545841;
 }
 
 /* OTROS INPUT */
@@ -120,14 +125,14 @@ main #btnRegistro {
     font-weight: bold;
     border: none;
     border-radius: 12px;
-    background-color: var(--olive-green);
+    background-color: #9fa76b;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 15em;
     display: flex;
     justify-self: center;
     justify-content: center;
-    color: var(--gravel);
+    color: #49464d;
     text-shadow:
         0 0 2px #eaf0c9,
         0 0 12px #a6b54f;
@@ -153,7 +158,7 @@ main .row > .col-md-6 > fieldset {
 }
 
 main legend {
-    color: var(--gravel);
+    color: #49464d;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -165,7 +170,7 @@ main input[type="checkbox"] {
     width: 15px;
     height: 15px;
     border-radius: 4px;
-    border: 2px solid var(--finch);
+    border: 2px solid #545841;
     background-color: transparent;
     cursor: pointer;
 
@@ -178,8 +183,8 @@ main input[type="checkbox"] {
 
 /* Checks marcados sisi */
 main input[type="checkbox"]:checked {
-    background-color: var(--finch);
-    border-color: var(--finch);
+    background-color: #545841;
+    border-color: #545841;
 }
 
 /* Hay que meter manualmente el click ¿Es un coñazo en el codigo? Si. Pero y lo bien que queda? */

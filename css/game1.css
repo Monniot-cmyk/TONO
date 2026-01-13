@@ -69,12 +69,12 @@ main button:hover {
 }
 
 main button.active {
-    background: #a6b54f; /* Verde */
+    background: #a6b54f; 
     color: black;
 }
 
 main button.recording {
-    background: #dc932f; /* Rojo */
+    background: #dc932f;
     color: white;
     animation: pulse 2s infinite;
 }
@@ -272,7 +272,7 @@ main #instructions {
     transition: opacity 0.3s;
 }
 
-/* Clase para ocultar el modal - IGUAL que en el primer juego */
+/* Clase para ocultar el modal*/
 #upload-modal.game1modal.hidden {
     opacity: 0 !important;
     pointer-events: none !important;

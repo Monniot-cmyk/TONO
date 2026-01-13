@@ -56,16 +56,6 @@ main > * {
     z-index: 1;
 }
 
-
-
-   /* FIX GLOBAL */
-   /* Sergio: He comentado esto porque hace cosas raras con los juegos (por eso de que afecte a todo lo que está en el main). Si alguien ve que por comentarlo da un fallo otro lado que lo descomente y lo solucione, salu3 :D */
-/* main *,
-main *::before,
-main *::after {
-    box-sizing: border-box;
-} */
-
 /* Esto de controlar el main desde el header es para que todas las paginas hereden el mismo estilo */
 main {
     background:linear-gradient(to bottom , 
@@ -92,9 +82,9 @@ body {
     font-size: 18px;
 }
 
- /* OPCIONES DELHEADER COMO TAL */
-header{
-    background-color: var(--gravel);
+ /* OPCIONES DEL HEADER COMO TAL */
+header {
+    background: linear-gradient(to right, var(--gravel) 0%, #413e44 50%, var(--gravel) 100%);
     display: flex;
     padding: 1em 3em;
     justify-content: space-between;
@@ -128,7 +118,7 @@ header>section:nth-of-type(2){
     cursor: pointer;    
 }
 
-h1{
+header h1{
     font-family: 'Moonrising', 'Century Gothic', sans-serif;
     color: #f8ffff;
     text-shadow:
@@ -150,7 +140,7 @@ header>section:nth-of-type(2) button{
     0 0 6px #a6b54f,
     0 0 12px #a6b54f,
     0 0 24px #8fa63f;
-    background-color: var(--gravel);
+    background-color: #3a383d;
     border: none;
 }
 
@@ -159,6 +149,7 @@ header>section:nth-of-type(2) button{
     margin: 0 auto;
     transition: transform 0.3s ease;
     transform-origin: center;
+    background-color: transparent;
 }
 
 header:has(nav.mostrar) #btnMenu {
@@ -256,7 +247,11 @@ nav>ul{
 nav>ul>li>a{
     text-decoration: none;
     color: #f8ffff;
-    font-family: 'Moonrising', 'Century Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
 }
 
 nav>ul>li>a:hover {
@@ -450,7 +445,7 @@ nav.mostrar a,
         align-items: center;
     }
 
-    h1 {
+    header h1 {
         font-size: 1.5em;
         text-align: center;
         letter-spacing: 0.15em;
@@ -498,7 +493,7 @@ nav.mostrar a,
         padding: 1em 2em;
     }
 
-    h1 {
+    header h1 {
         font-size: 1.8em;
         letter-spacing: 0.18em;
         text-align: center;
@@ -540,7 +535,7 @@ nav.mostrar a,
         min-height: 50vw;
     }
 
-    h1 {
+    header h1 {
         font-size: 2.5em;
         letter-spacing: 0.25em;
     }
@@ -554,3 +549,5 @@ nav.mostrar a,
         padding: 2.5rem 2rem;
     }
 }
+
+
