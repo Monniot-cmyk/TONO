@@ -10,10 +10,8 @@
   --finch: #545841;
 }
 
-/* ===================== */
-/* LAYOUT GENERAL */
-/* ===================== */
 
+/* LAYOUT GENERAL */
 main {
   display: flex;
   justify-content: center;
@@ -40,20 +38,16 @@ main {
   z-index: 2; 
 }
 
-/* ===================== */
-/* FEED */
-/* ===================== */
 
+/* FEED */
 .stats-feed {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* ===================== */
-/* TARJETA */
-/* ===================== */
 
+/* TARJETA */
 .stats-card {
   display: flex;
   align-items: center;
@@ -70,10 +64,8 @@ main {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* ===================== */
-/* AVATAR */
-/* ===================== */
 
+/* AVATAR */
 .stats-avatar img {
   width: 100px;
   height: 100px;
@@ -81,10 +73,7 @@ main {
   object-fit: cover;
 }
 
-/* ===================== */
 /* CONTENIDO */
-/* ===================== */
-
 .stats-content {
   flex: 1;
 }
@@ -104,10 +93,7 @@ main {
   color: #f8ffff99;
 }
 
-/* ===================== */
 /* WRAPPER BOTÓN + ONDA */
-/* ===================== */
-
 .wrapper {
   margin-left: auto;          
   display: flex;
@@ -116,10 +102,7 @@ main {
   gap: 1.5rem;
 }
 
-/* ===================== */
 /* ONDA */
-/* ===================== */
-
 .sound-wave {
   display: flex;
   align-items: center;       
@@ -159,11 +142,9 @@ main {
   75% { transform: scaleY(11); }
 }
 
-/* ===================== */
-/* BOTÓN */
-/* ===================== */
 
-.wave-button-container {
+/* BOTÓN */
+.mantenimiento-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -183,15 +164,26 @@ main {
 
 }
 
-.wave-button-container:hover {
+.mantenimiento-btn:hover {
   transform: scale(1.05) translateY(-1px);
   box-shadow: 0 10px 20px rgba(171,172,140,0.25);
 }
 
-/* ===================== */
-/* TABLET */
-/* ===================== */
+/* Animación shake */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
 
+.mantenimiento-btn.shake {
+  animation: shake 0.4s ease;
+}
+
+/* TABLET */
 @media (max-width: 1024px) {
   .stats-avatar img {
     width: 80px;
@@ -199,10 +191,7 @@ main {
   }
 }
 
-/* ===================== */
 /* MÓVIL */
-/* ===================== */
-
 @media (max-width: 480px) {
 
   .stats-card {
@@ -226,7 +215,7 @@ main {
     order: 1;                  
   }
 
-  .wave-button-container {
+  .mantenimiento-btn {
     order: 2;  
     margin: 2rem;               
   }
