@@ -18,24 +18,32 @@
     <link rel="stylesheet" href="../../css/perfil.css">
 </head>
 <body>
+    <header></header>
  <main class="logout-main">
 
     <section class="logout-card">
 
         <h1>Perfil de usuario</h1>
 
+       <div class="perfil-header">
+        <img src="../../img/avatar-femenino.png" alt="Icono usuario">
         <p class="perfil-nombre" id="perfilNombre">Nombre de usuario</p>
-
-        <div class="perfil-info">
-            <p><strong>Email:</strong><span id="perfilEmail"></span></p>
-            <p><strong>Intereses:</strong><span id="perfilIntereses"></span></p>
         </div>
 
-        <button>Editar perfil</button>
+        <div class="perfil-info">
+            <p><strong>Email: </strong><span id="perfilEmail"></span></p>
+            <p><strong>Intereses: </strong><span id="perfilIntereses"></span></p>
+        </div>
+
+        <button class="mantenimiento-btn">Editar perfil</button>
+        <button>
+            <a href="../../index.html">Volver al inicio</a>
+        </button>
 
     </section>
 
 </main>
+<footer></footer>
         <script src="../../scripts/header.js"></script>
         <script src="../..//scripts/footer.js"></script>
         <script src="../../scripts/validacion/perfil.js"></script>
