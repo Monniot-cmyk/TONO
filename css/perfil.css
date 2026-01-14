@@ -1,182 +1,180 @@
-/* main */
+/* MAIN */
 .logout-main {
     min-height: 100vh;
+    padding: 4rem 1rem;
+    background-color: var(--aths-special);
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--aths-special);
+    align-items: center; 
 }
 
-/* card */
+/*  CARD PERFIL */
 .logout-card {
-    background-color: white;
-    padding: 2.5rem 3rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
     width: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.8rem 2rem;
 }
 
-/* titulo */
+/* TITULO */
 .logout-card h1 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-}
-
-/* avatar */
-.perfil-avatar {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
+    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-/* nombre */
+/* CONTENEDOR ICONO + NOMBRE */
+.perfil-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    grid-column: 1 / 2;
+}
+
+.perfil-header img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .perfil-nombre {
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
 }
 
-/* info */
+/* INFO PERFIL*/
 .perfil-info {
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
     color: #555;
+    grid-column: 2 / 3;
+    justify-content: center;
 }
 
-.perfil-info p {
-    margin: 0.4rem 0;
+.perfil-info strong {
+    color: #222;
+    font-weight: 600;
 }
 
-/* boton */
+/* BOTONES */
 .logout-card button {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: 1rem;
-    font-weight: bold;
+    text-decoration: none;
+    grid-column: 1 / -1;
+    align-self: start;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
     border: none;
-    border-radius: 8px;
     background-color: var(--olive-green);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
     text-shadow:
         0 0 2px #eaf0c9,
-        0 0 12px #a6b54f;
+        0 0 10px #a6b54f;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 0.6rem;
+}
+
+a {
+    text-decoration: none;
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-card button:last-child {
+    margin-bottom: 0;
 }
 
 .logout-card button:hover {
-    box-shadow: 0 10px 20px rgba(223, 224, 170, 0.25);
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(166, 181, 79, 0.35);
 }
 
-/* RESPONSIVE
-Para moviles */
-@media (max-width: 480px) {
-
-    .logout-main {
-        padding: 1em;
-    }
-
+/* RESPONSIVE MÓVIL */
+@media (max-width: 600px) {
     .logout-card {
-        padding: 2rem 1.5rem;
-        max-width: 90%;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
     }
 
-    .logout-card h1 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .perfil-avatar {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 0.8rem;
-    }
-
-    .perfil-nombre {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
+    .perfil-header,
     .perfil-info {
-        margin-bottom: 1.5rem;
-        font-size: 0.85rem;
+        grid-column: 1 / -1;
+        padding-left: 0;
     }
 
-    .logout-card button {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Para tablets */
-@media (max-width: 768px) {
-
-    .logout-main {
-        padding: 2em;
-    }
-
-    .logout-card {
-        padding: 2.3rem 2rem;
-        max-width: 350px;
+    .perfil-header img {
+        width: 70px;
+        height: 70px;
     }
 
     .logout-card h1 {
-        font-size: 1.6rem;
-    }
-
-    .perfil-avatar {
-        width: 100px;
-        height: 100px;
-    }
-
-    .perfil-nombre {
-        font-size: 1.1rem;
-    }
-
-    .perfil-info {
-        font-size: 0.9rem;
-    }
-
-    .logout-card button {
-        padding: 0.85rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Para pantallas grandes */
-@media (min-width: 1200px) {
-
-    .logout-main {
-        padding: 3em;
-    }
-
-    .logout-card {
-        padding: 2.5rem 3rem;
-        max-width: 400px;
-    }
-
-    .logout-card h1 {
-        font-size: 1.8rem;
-    }
-
-    .perfil-avatar {
-        width: 110px;
-        height: 110px;
-    }
-
-    .perfil-nombre {
         font-size: 1.2rem;
     }
 
-    .perfil-info {
-        font-size: 1rem;
+    .logout-card button {
+        width: 100%;
+    }
+}
+
+/* Animación shake */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.mantenimiento-btn.shake {
+  animation: shake 0.4s ease;
+}
+
+/* RESPONSIVE TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .logout-card {
+        max-width: 500px;
+        gap: 1.2rem 1.5rem;
+        padding: 1.8rem;
+    }
+
+    .perfil-header img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .logout-card h1 {
+        font-size: 1.3rem;
     }
 
     .logout-card button {
-        padding: 0.9rem;
-        font-size: 1rem;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* PANTALLA GRANDE */
+@media (min-width: 1025px) {
+    .logout-card {
+        max-width: 700px;
     }
 }
