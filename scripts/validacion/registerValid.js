@@ -67,9 +67,6 @@ form.addEventListener("submit", (e) => {
     // Simular login automático tras el registro
     localStorage.setItem("userLogged", "true");
     // localStorage.setItem("userName", usuario); //  nombre que se verá en el header
-
-    //REBECA
-
     // Redirección al index
     window.location.href = "../../index.html";
 
