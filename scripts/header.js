@@ -186,14 +186,33 @@ sectionTitle.addEventListener("click", () => {
 });
 
 //  CONTROL DE ESTADO DE USUARIO (simulado por que no hay backend)
+// const isLogged = localStorage.getItem("userLogged") === "true";
+
+// if (isLogged) {
+//   const userName = localStorage.getItem("userName");
+//   const spanCuenta = accountButton.querySelector("span");
+
+//   if (userName && spanCuenta) {
+//     spanCuenta.textContent = userName;
+//   }
+// }
+
+// document.body.classList.add(isLogged ? "user" : "guest");
+
+//Rebeca
 const isLogged = localStorage.getItem("userLogged") === "true";
 
 if (isLogged) {
-  const userName = localStorage.getItem("userName");
-  const spanCuenta = accountButton.querySelector("span");
+  // obtener el objeto completo del usuario
+  const usuarioActivoString = localStorage.getItem("usuarioActivo") || sessionStorage.getItem("usuarioRegistrado");
+  if (usuarioActivoString) {
+    const usuarioActivo = JSON.parse(usuarioActivoString);
+    const spanCuenta = accountButton.querySelector("span");
 
-  if (userName && spanCuenta) {
-    spanCuenta.textContent = userName;
+    if (spanCuenta) {
+      // mostrar el nombre real o fallback al username
+      spanCuenta.textContent = usuarioActivo.nombre || usuarioActivo.usuario;
+    }
   }
 }
 
