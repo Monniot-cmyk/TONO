@@ -63,13 +63,22 @@
     background: #858e54;
 }
 
+#btn-fullscreen {
+    background: var(--olive-green);
+    color: white;
+}
+
+#btn-fullscreen:hover{
+    background: #818d3e;
+}
+
 #btn-upload{
     background: var(--olive-green);
     color: white;
 }
 
 #btn-upload:hover{
-    background: #83b44a;
+    background: #818d3e;
 }
 
 #speed-control {

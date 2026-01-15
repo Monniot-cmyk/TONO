@@ -85,7 +85,7 @@ main button.upload-btn {
 }
 
 main button.upload-btn:hover {
-    background: #83b44a;
+    background: #818d3e;
 }
 
 /* Interruptor Deslizante */
@@ -395,7 +395,7 @@ main #instructions {
 }
 
 #btn-upload.control-btn:hover {
-    background: var(--asparagus);
+    background: #818d3e;;
 }
 
 /* IMPORTANTE: Asegurar que el game-container tenga position relative */
