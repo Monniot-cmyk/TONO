@@ -98,8 +98,8 @@ h4Info.textContent = "Más Información";
 const ulInfo = document.createElement("ul");
 
 const enlacesInfo = [
-  { texto: "Política de cookies", href: "#" },
-  { texto: "Repositorio en GitHub", href: "#" }
+  { texto: "Política de cookies", href: "/html/cookies/cookies.html" },
+  { texto: "Repositorio en GitHub", href: "https://github.com/Monniot-cmyk/TONO" }
 ];
 
 enlacesInfo.forEach(item => {

@@ -1,0 +1,37 @@
+/* COLORES CSS HEX */
+:root{
+--off-white: #f8ffff;
+--pumice: #d2dad5;
+--santas-gray: #a4a3a8;
+--mountain-mist: #97969c;
+--jumbo: #7e7d87;
+--salt-box: #67616d;
+--gravel: #49464d;
+--deep: #2e2b31;
+--olive-green: #a6b54f;
+--asparagus: #858e54;
+--finch: #545841;
+}
+
+main{
+    box-sizing: border-box;
+}
+h2, h3{
+    color: var(--off-white);
+    text-align: center;
+    font-size: 35px;
+}
+
+.cookies-policy{
+    width: 70%;
+    margin: 5em auto;
+    padding: 5em 0;
+    background-color: #97969c54;
+    border-radius: 10px;
+}
+
+p{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 5em;
+}
