@@ -420,12 +420,23 @@ main #instructions {
 #btnHelp {
     cursor: pointer;
     position: absolute;
-    padding: 10px 15px;
-    color: var(--mountain-mist);
     border-radius: 5px;
-    bottom: 0;
-    right: 10px;
-    font-size: 1.2rem;
+    bottom: 10px;
+    right: 13px;
+    background: #d9ff001c;
+    border: none;
+    color: var(--off-white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    height: 1.2em;
+}
+
+#btnHelp:hover {
+    background: #858e54;
 }
 
 /* Fondo del modal */
