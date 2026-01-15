@@ -244,7 +244,16 @@ main #gameCanvas {
 
 /* Botón ayuda*/
 #btnHelp {
+    cursor: pointer;
+    position: absolute;
+    padding: 10px 15px;
+    color: var(--mountain-mist);
+    border-radius: 5px;
+    bottom: 0;
+    right: 10px;
+    font-size: 1.2rem;
 }
+
 
 /* Fondo del modal */
 div.helpModal {
@@ -259,19 +268,52 @@ div.helpModal {
   align-items: center;
 }
 
+/* Fondo del modal */
+div.helpModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
 .helpModal-content {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 8px;
-  position: relative;
+    background: var(--salt-box);
+    padding: 1.5em;
+    width: 300px;
+    border-radius: 8px;
+    position: relative;
+    }
+
+.helpModal-content h2{
+    color: var(--olive-green);
+}
+
+.helpModal-content p{
+    color: var(--off-white);
 }
 
 /* Botón cerrar del modal */
 .close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  cursor: pointer;
-  font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: var(--asparagus);
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: var(--off-white);
+}
+
+.close:hover {
+    background-color: var(--olive-green);
 }
