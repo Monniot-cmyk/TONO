@@ -748,6 +748,19 @@
     border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
+#upload-modal select#beat-category {
+    background-color: #1a1a1a !important;
+    color: #f8ffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#upload-modal select#beat-category option {
+    background-color: #1a1a1a !important;
+    color: #f8ffff !important;
+    padding: 10px !important;
+}
+
+
 /* Toast */
 .toast {
     position: fixed;
