@@ -34,6 +34,10 @@
                         <button id="btn-clear" class="control-btn" title="Borrar todo">
                             <span class="icon">🗑</span>
                         </button>
+                        <!-- Botón instrucciones -->
+                         <button id="btnHelp" class="control-btn" title="Ayuda">
+                            <span class="icon">?</span>
+                         </button>
                         <button id="btn-fullscreen" class="control-btn" onclick="pantallaCompleta()">
                             <span class="icon">FULLSCREEN</span>
                         </button>
@@ -189,6 +193,16 @@
                     </div>
                 </div>
 
+                <!-- Modal de instrucciones -->
+                <div id="helpModal" class="helpModal">
+                    <div class="helpModal-content">
+                        <span id="closeModal" class="close">&times;</span>
+                        <h2>Instrucciones</h2>
+                        <p>
+                            Usa teclado o ratón para tocar notas.
+                        </p>
+                    </div>
+                </div>
                 <!-- Toast Notification -->
                 <div id="toast" class="hidden">Beat subido exitosamente!</div>
             </div>

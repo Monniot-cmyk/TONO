@@ -198,9 +198,6 @@ header:has(nav.mostrar) #btnMenu {
 
 
 
-#opcionesCuenta.mostrar { 
-    z-index: 1000;
-}
 
 /* NAV */
 /* Oculto por defecto, se muestra como un desplegable al pulsar el boton */
@@ -301,6 +298,7 @@ body.user [data-estado="user"] {
     max-height: 300px;
     transform: translateY(0);
     pointer-events: auto;
+    z-index: 1000;
 }
 
 #opcionesCuenta a {

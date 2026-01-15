@@ -697,3 +697,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+const btnHelp = document.getElementById("btnHelp");
+  const modal = document.getElementById("helpModal");
+  const closeModal = document.getElementById("closeModal");
+
+  btnHelp.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Cerrar al hacer clic fuera del modal
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
