@@ -65,7 +65,7 @@ const enlacesContenido = [
   { texto: "Spark", href: "/html/games/game1.html" },
   { texto: "Shapes", href: "/html/games/game2.html" },
   { texto: "Chords", href: "/html/games/game3.html" },
-  { texto: "Resultados", href: "/html/stats/stats.html" }
+  { texto: "Estadisticas", href: "/html/stats/stats.html" }
 ];
 
 // Crea <li><a></a></li> por cada enlace
