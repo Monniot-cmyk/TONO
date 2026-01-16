@@ -13,7 +13,6 @@ const linkLogo = document.createElement("a");
 linkLogo.href = "/index.html";
 //Este tremendisimo cristo de aqui es mi logo vectorial en formato texto, que es lo que necesito para poder
 //Poner el efecto de neon sobre el logo
-//RUBEN POR DIOS QUE ME HE HECHO UN LOGO VECTORIAL ME MEREZCO EL SOBRESALIENTE
 const svgLogo = `
 <svg viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg" class="logo">
   <g>
